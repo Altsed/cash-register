@@ -1,0 +1,6 @@
+
+b
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(Çµí‘
+b	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(·š†‡
+^
+java:S1128"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8ÌÍ‚áÉ.
