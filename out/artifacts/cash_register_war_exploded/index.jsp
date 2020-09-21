@@ -13,7 +13,7 @@
   <body>
   <h2>Please login:</h2>
 
-  Link <a href="/stock">stockman</a>
+  Link <a href="WEB-INF/view/stockman/stock.jsp">stockman</a>
   <br>
   Link <a href="/operator">operator</a>
   <br>

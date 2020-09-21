@@ -14,7 +14,7 @@ public class ServletStockController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("operator.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("WEB-INF/view/stockman/stock.jsp");
         requestDispatcher.forward(req, resp);
     }
 }
