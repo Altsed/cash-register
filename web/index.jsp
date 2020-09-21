@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Title</title>
   </head>
   <body>
-  $END$
+  <h2>Please login:</h2>
+
+  Link <a href="/stock">stockman</a>
+  <br>
+  Link <a href="/operator">operator</a>
+  <br>
+  Link <a href="/cheif_operator">cheif_operator</a>
+
   </body>
 </html>

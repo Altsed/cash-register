@@ -1,9 +1,9 @@
-package dao;
+package service;
 
 import entity.Product;
 import java.util.List;
 
-interface CustomerDAO {
+public interface CashRegisterService {
     void getProduct();
     void createProduct();
     List<Product> getProducts();
