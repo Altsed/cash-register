@@ -1,0 +1,13 @@
+
+r
+java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çŽØß8à©Ë†Ì.
+ƒ
+java:S1989"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—þÿÿÿÿ8µ¸çþË.
+b
+java:S2259!"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥þ8ÌþÊ†Ì.
+b
+java:S2259"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥þ8‘ö­þË.
+ƒ
+java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—þÿÿÿÿ8à©Ë†Ì.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ý¤®ò8ß˜ÕþË.

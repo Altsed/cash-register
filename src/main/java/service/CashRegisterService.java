@@ -7,4 +7,5 @@ public interface CashRegisterService {
     void getProduct();
     void createProduct();
     List<Product> getProducts();
+    String validateUser(String login, String password);
 }
