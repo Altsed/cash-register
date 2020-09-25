@@ -12,9 +12,7 @@ public class RegisterCommand extends FrontCommand{
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
 
-        List<Role> roles = new ArrayList<>();
-        roles.add(new Role(1, "Admin"));
-        roles.add(new Role(2, "User"));
+        List<Role> roles = cashRegisterService.getRoles();
 
         request.setAttribute("roles", roles);
         forward("register_form");

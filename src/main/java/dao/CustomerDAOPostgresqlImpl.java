@@ -1,12 +1,11 @@
 package dao;
 
 import entity.Product;
+import entity.Role;
 import validation.BCryptPassword;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static dao.query.SqlQuery.*;
@@ -56,5 +55,38 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
     }
 
+    @Override
+    public List<Role> getRoles() {
+        List<Role> listRoles = new ArrayList<>();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try(Connection connection = connectionBuilder.getConnection()){
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(GET_ROLES);
+           while (resultSet.next()){
+               listRoles.add( new Role (resultSet.getInt("id"),resultSet.getString("name")));
+            }
+            return listRoles;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+            if (resultSet != null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+            }
+        }
 
+        return listRoles;
+
+    }
 }

@@ -3,6 +3,7 @@ package service;
 import dao.CustomerDAO;
 import dao.CustomerDAOPostgresqlImpl;
 import entity.Product;
+import entity.Role;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class CashRegisterServiceImpl implements CashRegisterService {
 
     }
 
+
     @Override
     public List<Product> getProducts() {
         return null;
@@ -27,5 +29,10 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     @Override
     public String validateUser(String login, String password) {
         return customerDAO.validateUser(login, password);
+    }
+
+    @Override
+    public List<Role> getRoles() {
+        return customerDAO.getRoles();
     }
 }

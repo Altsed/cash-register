@@ -1,6 +1,8 @@
 package dao;
 
 import entity.Product;
+import entity.Role;
+
 import java.util.List;
 
 public interface CustomerDAO {
@@ -9,4 +11,6 @@ public interface CustomerDAO {
     List<Product> getProducts();
 
     String validateUser(String login, String password);
+
+    List<Role> getRoles();
 }

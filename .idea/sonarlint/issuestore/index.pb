@@ -33,10 +33,6 @@ R
 web/operator.jsp,e\d\edcee32c80dc4e05e20c9d9e0a43d72cca26d7b9
 S
 #web/WEB-INF/view/stockman/stock.jsp,a\9\a97d4f7a52abf0c9d37d1fa27d7dd5f0a69be623
-j
-:src/main/java/controller/stock/ServletStockController.java,6\6\66787f291cfffe1495790039e56d5bd8f6dd54d4
-a
-1src/main/java/controller/MyDataSourceFactory.java,2\a\2adbd1bbe0424f9c9b52035aa91798862b51a043
 K
 web/WEB-INF/view/result.jsp,3\a\3a9cf01cedd1e822e86ab690fb5dd16285f48a6d
 g
