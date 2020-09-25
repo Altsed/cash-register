@@ -25,15 +25,15 @@ public class User {
     public boolean validate(){
         if (password.length() < 8) {
             message = "Password must have at least 8 characters";
-            return false;
+            return isValid = false;
         }
         else if (password.contains("\\w*\\s+\\w*")) {
             message = "Password cannot contain space";
-            return false;
+            return isValid = false;
         }
-        if (!login.matches("[A-Z][a-z][А-ЯІЇЄ][а-яіїє']{1,20}$")) {
-            message = "Login must contains only letters and numbers";
-            return false;
+        else if (!login.matches("[A-Za-zА-ЯІЇЄа-яіїє']*")) {
+            message = "Login must contains only letters";
+            return isValid = false;
         }
 
         return isValid = true;

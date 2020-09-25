@@ -105,7 +105,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
         } catch (SQLException throwables) {
             user.setValid(false);
-            user.setMessage(throwables.getMessage());
+            user.setMessage("User already exists.");
             throwables.printStackTrace();
             return user.getMessage();
 

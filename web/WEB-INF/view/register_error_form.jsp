@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Enumeration" %><%--
   Created by IntelliJ IDEA.
   User: SEVEN-WORK
   Date: 16.09.2020
@@ -21,7 +21,7 @@
     <jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
   </head>
   <body>
-   <div class="container h-100">
+     <div class="container h-100">
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
@@ -44,7 +44,7 @@
                     name="password"
                     class="form-control"
                     id="exampleInputPassword"
-                    value=<%= request.getAttribute("password") %>
+                    placeholder="password"
              >
            </div>
            <div class="form-group">
@@ -61,6 +61,7 @@
            <hr>
               <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register">Register</button>
          </form>
+
 
        </div>
      </div>

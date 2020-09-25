@@ -14,39 +14,38 @@ import java.util.List;
 public class RegisterCommand extends FrontCommand {
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
+        String roleView = "/welcome-page";
         String action = request.getParameter("registration");
+
         if (action == null) {
             List<Role> roles = cashRegisterService.getRoles();
             HttpSession session = request.getSession();
             session.setAttribute("roles", roles);
             forward("register_form");
-
         }
         int roleId = Integer.parseInt(request.getParameter("role"));
         User user = new User(request.getParameter("login"), request.getParameter("password"), roleId);
 
-        if (!user.validate()) {
-            request.setAttribute("message", user.getMessage());
-            request.setAttribute("login", user.getLogin());
-            request.setAttribute("password", user.getPassword());
+       if (!user.validate()) {
+            removeAndSetAttributes(user);
             forward("register_error_form");
-        }
-        String statusUser = cashRegisterService.registerUser(user);
-        if (!user.isValid()) {
-            System.out.println(statusUser);
-            request.removeAttribute("message");
-            request.setAttribute("message", statusUser);
-
-            Enumeration enumeration = request.getAttributeNames();
-            while (enumeration.hasMoreElements()) {
-                String s = enumeration.nextElement().toString();
-                System.out.println(s + "=" + request.getAttribute(s));
-
+        } else {
+            String statusUser = cashRegisterService.registerUser(user);
+            if (!user.isValid()) {
+                removeAndSetAttributes(user);
                 forward("register_error_form");
             }
-
-            forward(statusUser);
+            forward(statusUser + roleView);
         }
+
+    }
+
+    private void removeAndSetAttributes(User user){
+        request.removeAttribute("message");
+        request.removeAttribute("login");
+
+        request.setAttribute("message", user.getMessage());
+        request.setAttribute("login", user.getLogin());
     }
 }
 
