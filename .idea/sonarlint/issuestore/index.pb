@@ -1,6 +1,4 @@
 
-=
-web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
 Q
 !src/main/java/entity/Product.java,8\a\8ae77957877f4d5eed3d978e1da2d4e77255d908
 S
@@ -63,3 +61,7 @@ e
 5src/main/java/controller/command/RegisterCommand.java,d\1\d126befbdbcc1476773164029cc355db110366f4
 R
 "web/WEB-INF/view/register_form.jsp,4\6\462ec1c2fd58f1206d8f0909365b6a06e5f14256
+X
+(web/WEB-INF/view/register_error_form.jsp,f\0\f070ff6ca5145e4fa4a3edc9eba6d790317d0882
+E
+web/WEB-INF/index.jsp,6\2\629f349cba3b679de4d2e2211d6e7e6f6131c0ad

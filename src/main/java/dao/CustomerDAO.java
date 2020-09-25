@@ -11,9 +11,11 @@ public interface CustomerDAO {
     void createProduct();
     List<Product> getProducts();
 
-    String validateUser(String login, String password);
+    User validateUser(String login);
 
     List<Role> getRoles();
 
     String registerUser(User user);
+
+    String getRoleForUser(User user);
 }

@@ -21,17 +21,12 @@
     <jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
   </head>
   <body>
-  <% for (Enumeration<String> enumeration = request.getAttributeNames(); enumeration.hasMoreElements();) {
-    String attributeName = enumeration.nextElement();
-    Object attribute = request.getAttribute(attributeName);
-    out.println(attributeName + " -> " + attribute.getClass().getName() + ":" + attribute.toString());
-  }
-  %>
-   <div class="container h-100">
+     <div class="container h-100">
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
-         <h4 class="page-header"><%= request.getAttribute("message") %></h4>
+<%--         <h4 class="page-header"><%= request.getAttribute("message") %></h4>--%>
+         <h4 class="page-header">${requestScope.message}</h4>
          <form name="loginForm" method="GET">
            <input hidden name="registration"/>
            <div class="form-group">
@@ -40,8 +35,6 @@
                     name="login"
                     class="form-control"
                     id="login"
-                    value=<%= request.getAttribute("login") %>
-
              >
            </div>
            <div class="form-group">

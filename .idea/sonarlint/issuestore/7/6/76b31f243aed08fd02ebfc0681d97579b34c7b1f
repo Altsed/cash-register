@@ -1,13 +1,17 @@
 
-F
-java:S1168"+Return an empty collection instead of null.(¥¹ï8Ë©¬ŠÌ.
-@
-java:S2129" Remove this "String" constructor(ÀÕÈãşÿÿÿÿ8¼ÜÇŠÌ.
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8Ë©¬ŠÌ.
-œ
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Û—ĞÚ8Ë©¬ŠÌ.
-Q
-java:S1128"6Remove this unused import 'validation.BCryptPassword'.(’Şë8æºÀÌ.
-o
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ç®«€úÿÿÿÿ8³ªÉŒÌ.
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Û—ĞÚ8ƒÙ›Ì.
+V
+java:S49733"9Use the "equals" method if value comparison was intended.(ĞÍ¨¿8º¨¬«Ì.
+l
+java:S2095\"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8Á§Õ§Ì.
+=
+java:S2129W" Remove this "String" constructor(Ü¯Œş8…æ¬§Ì.
+S
+java:S1128"6Remove this unused import 'validation.BCryptPassword'.(’Şë8ƒÙ›Ì.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8ƒÙ›Ì.
+Y
+java:S2589d"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8ÿ‚ï§Ì.
+H
+java:S1168"+Return an empty collection instead of null.(¥¹ï8ƒÙ›Ì.

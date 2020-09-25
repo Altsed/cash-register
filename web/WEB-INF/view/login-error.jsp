@@ -22,7 +22,7 @@
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
-         <h2 class="page-header">Please try again</h2>
+         <h2 class="page-header">Please check login/password</h2>
          <form name="loginForm" method="GET" action="Login">
            <div class="form-group">
              <label for="login">Login</label>
@@ -43,7 +43,7 @@
              >
            </div>
              <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login">Login</button>
-           <button type="submit" class="btn btn-secondary" name="command" value="AddProduct">Add Product</button>
+           <button type="submit" class="btn btn-secondary" name="command" value="Register">Register</button>
          </form>
 
 

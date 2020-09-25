@@ -30,7 +30,9 @@
                     name="login"
                     class="form-control"
                     id="login"
-                    placeholder="Login"
+                   placeholder="Login"
+                    value=${requestScope.login}
+
              >
            </div>
            <div class="form-group">
@@ -44,7 +46,8 @@
            </div>
              <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login">Login</button>
            <button type="submit" class="btn btn-secondary" name="command" value="Register">Register</button>
-         </form>
+           </form>
+
        </div>
      </div>
    </div>

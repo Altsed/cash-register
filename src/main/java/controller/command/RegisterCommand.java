@@ -7,14 +7,12 @@ import service.CashRegisterService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
 
 public class RegisterCommand extends FrontCommand {
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
-        String roleView = "/welcome-page";
+
         String action = request.getParameter("registration");
 
         if (action == null) {
@@ -23,19 +21,22 @@ public class RegisterCommand extends FrontCommand {
             session.setAttribute("roles", roles);
             forward("register_form");
         }
-        int roleId = Integer.parseInt(request.getParameter("role"));
-        User user = new User(request.getParameter("login"), request.getParameter("password"), roleId);
+
+        User user = new User(request.getParameter("login"),
+                request.getParameter("password"),
+                Integer.parseInt(request.getParameter("role")));
 
        if (!user.validate()) {
             removeAndSetAttributes(user);
             forward("register_error_form");
         } else {
-            String statusUser = cashRegisterService.registerUser(user);
+            cashRegisterService.registerUser(user);
             if (!user.isValid()) {
                 removeAndSetAttributes(user);
                 forward("register_error_form");
             }
-            forward(statusUser + roleView);
+            request.setAttribute("message", "User was successfully registered");
+            forward("register_form");
         }
 
     }

@@ -17,6 +17,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/superhero/bootstrap.min.css" integrity="sha384-HnTY+mLT0stQlOwD3wcAzSVAZbrBp141qwfR4WfTqVQKSgmcgzk+oP0ieIyrxiFO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Cash register</title>
     <jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
   </head>
@@ -26,6 +27,7 @@
        <div class="col-md-6 col-md-offset-2">
          <hr>
          <h2 class="page-header">Please login or register</h2>
+         <h4 class="page-header">${requestScope.message}</h4>
          <form name="registration-form" method="GET" >
            <input hidden name="registration"/>
            <div class="form-group">
@@ -60,7 +62,9 @@
              </select>
             </div>
            <hr>
+              <button onclick="location.href='index.jsp'" class="btn" ><i class="fa fa-back"></i>Back</button>
               <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register" >Register</button>
+
          </form>
 
        </div>

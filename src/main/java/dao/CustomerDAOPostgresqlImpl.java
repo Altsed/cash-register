@@ -32,31 +32,37 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
     }
 
     @Override
-    public String validateUser(String login, String password) {
-        String name = "";
+    public User validateUser(String login) {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try(Connection connection = connectionBuilder.getConnection()){
-            preparedStatement = connection.prepareStatement(GET_ROLE_AND_PASSWORD_FOR_THE_USER);
+            preparedStatement = connection.prepareStatement(GET_ROLE_ID_AND_PASSWORD_FOR_THE_USER);
             preparedStatement.setString(1, login);
 
             if (!preparedStatement.execute()){
-                return name;
+                return null;
             }
             resultSet = preparedStatement.getResultSet();
-            resultSet.next();
-            boolean checkPasword = checkPass(password, resultSet.getString("password"));
-            name = resultSet.getString("name");
+
+            User user = new User();
+            while (resultSet.next()){
+
+                user = new User(login,
+                        resultSet.getString("password"),
+                        Integer.parseInt(resultSet.getString("role_id")));
+
+            }
             preparedStatement.close();
             resultSet.close();
-            return checkPasword ? name : "";
+            return user;
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
-        return name;
+        return null;
 
     }
 
@@ -81,6 +87,28 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
         return listRoles;
 
+    }
+
+    @Override
+    public String getRoleForUser(User user) {
+        String roleName = "";
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try(Connection connection = connectionBuilder.getConnection()){
+            preparedStatement = connection.prepareStatement(GET_ROLE_FOR_THE_USER);
+            preparedStatement.setInt(1, user.getRole());
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet != null && resultSet.next()){
+                return resultSet.getString("name");
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+        return roleName;
     }
 
     @Override

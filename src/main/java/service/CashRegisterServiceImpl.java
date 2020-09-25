@@ -20,9 +20,7 @@ public class CashRegisterServiceImpl implements CashRegisterService {
 
     @Override
     public void createProduct() {
-
     }
-
 
     @Override
     public List<Product> getProducts() {
@@ -31,8 +29,15 @@ public class CashRegisterServiceImpl implements CashRegisterService {
 
     @Override
     public String validateUser(String login, String password) {
+        User user = customerDAO.validateUser(login);
+        String hashPassword = BCryptPassword.hashPassword(password);
 
-        return customerDAO.validateUser(login, password);
+        if (user == null || user.getPassword().equals(hashPassword)) {
+            return "login-error";
+        }
+
+        return customerDAO.getRoleForUser(user);
+
     }
 
     @Override

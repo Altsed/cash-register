@@ -1,0 +1,16 @@
+
+M
+java:S1128
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÅéÄ Ì.
+e
+java:S1192&"HDefine a constant instead of duplicating this literal "message" 3 times.(íî¶Í8ìŒÕ«Ì.
+O
+java:S1128"2Remove this unused import 'java.util.Enumeration'.(»îÜ®8ŞÜªÌ.
+Y
+java:S1854"<Remove this useless assignment to local variable "roleView".(­‘ÿ8¦Ø«Ì.
+j
+java:S2441"MMake "List" and its parameters serializable or don't store it in the session.(‚ø8Â¦Ì.
+c
+java:S1192"FDefine a constant instead of duplicating this literal "login" 3 times.(æÀóŒ8¨×ªÌ.
+J
+java:S1481"-Remove this unused "roleView" local variable.(­‘ÿ8¦Ø«Ì.
