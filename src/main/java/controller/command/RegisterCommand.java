@@ -5,6 +5,7 @@ import entity.User;
 import service.CashRegisterService;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -16,27 +17,40 @@ public class RegisterCommand extends FrontCommand {
         String action = request.getParameter("registration");
         if (action == null) {
             List<Role> roles = cashRegisterService.getRoles();
-            request.setAttribute("roles", roles);
+            HttpSession session = request.getSession();
+            session.setAttribute("roles", roles);
             forward("register_form");
 
         }
-            int roleId = Integer.parseInt(request.getParameter("role"));
-            User user = new User(request.getParameter("login"), request.getParameter("password"), roleId);
+        int roleId = Integer.parseInt(request.getParameter("role"));
+        User user = new User(request.getParameter("login"), request.getParameter("password"), roleId);
 
-            if (!user.validate()) {
-                request.setAttribute("message", user.getMessage());
-                request.setAttribute("login", user.getLogin());
-                request.setAttribute("password", user.getPassword());
-                System.out.println("is validate" + user.validate());
+        if (!user.validate()) {
+            request.setAttribute("message", user.getMessage());
+            request.setAttribute("login", user.getLogin());
+            request.setAttribute("password", user.getPassword());
+            forward("register_error_form");
+        }
+        String statusUser = cashRegisterService.registerUser(user);
+        if (!user.isValid()) {
+            System.out.println(statusUser);
+            request.removeAttribute("message");
+            request.setAttribute("message", statusUser);
+
+            Enumeration enumeration = request.getAttributeNames();
+            while (enumeration.hasMoreElements()) {
+                String s = enumeration.nextElement().toString();
+                System.out.println(s + "=" + request.getAttribute(s));
 
                 forward("register_error_form");
-
-
             }
+
+            forward(statusUser);
         }
-
-
-
-
-
+    }
 }
+
+
+
+
+

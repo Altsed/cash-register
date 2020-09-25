@@ -2,6 +2,7 @@ package service;
 
 import entity.Product;
 import entity.Role;
+import entity.User;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface CashRegisterService {
 
     List<Role> getRoles();
 
-    String registerUser(String login, String password, String role);
+    String registerUser(User user);
 }

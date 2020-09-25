@@ -81,18 +81,16 @@ CREATE INDEX FK_PRODUCT_idx1 ON receipt_has_product (product_id);
 CREATE INDEX FK_RECEIPT_idx ON receipt_has_product (receipt_id);
 CREATE INDEX FK_USER_idx ON receipt (user_id);
 
-INSERT INTO product VALUES 
-(1, 'apple', true);
+INSERT INTO product (name, is_weight) VALUES
+('apple', true);
 
-INSERT INTO warehouse VALUES 
-(1, 1, 0, 10.5);
-INSERT INTO user_role VALUES 
-(1, 'administrator');
-INSERT INTO user_account VALUES 
-(1, 'alex', 1, 1);
-INSERT INTO receipt VALUES 
-(1, 1, true);
-INSERT INTO receipt_has_product VALUES 
+INSERT INTO warehouse (product_id, available_quantity, available_weight) VALUES
+(1, 0, 10.5);
+INSERT INTO user_role (name) VALUES
+('administrator');
+INSERT INTO user_account (login, password, role_id) VALUES
+('alex', 1, 1);
+INSERT INTO receipt (user_id, is_closed) VALUES
+( 1, true);
+INSERT INTO receipt_has_product (receipt_id, product_id, quantity, weight) VALUES
 (1, 1, 0, 5.2);
-
-

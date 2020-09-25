@@ -25,16 +25,17 @@
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
-         <h4 class="page-header"><% request.getAttribute("message"); %></h4>
+         <h4 class="page-header"><%= request.getAttribute("message") %></h4>
          <form name="loginForm" method="GET">
            <input hidden name="registration"/>
            <div class="form-group">
              <label for="login">Login</label>
-             <input type="login"
+             <input type="text"
                     name="login"
                     class="form-control"
                     id="login"
-                    placeholder=<% request.getAttribute("login"); %>
+                    value=<%= request.getAttribute("login") %>
+
              >
            </div>
            <div class="form-group">
@@ -43,12 +44,12 @@
                     name="password"
                     class="form-control"
                     id="exampleInputPassword"
-                    placeholder=<% request.getAttribute("password"); %>
+                    value=<%= request.getAttribute("password") %>
              >
            </div>
            <div class="form-group">
              <label for="exampleInputPassword">Role</label>
-             <jsp:useBean id="roles" scope="request" type="java.util.List"/>
+             <jsp:useBean id="roles" scope="session" type="java.util.List"/>
              <select class="form-control" name="role" required>
                <option value="" selected disabled hidden>Choose role</option>
                <c:forEach items="${roles}"  var="role">

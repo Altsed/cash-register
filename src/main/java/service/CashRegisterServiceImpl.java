@@ -5,6 +5,7 @@ import dao.CustomerDAOPostgresqlImpl;
 import entity.Product;
 import entity.Role;
 import entity.User;
+import validation.BCryptPassword;
 
 import javax.jws.soap.SOAPBinding;
 import java.util.List;
@@ -30,6 +31,7 @@ public class CashRegisterServiceImpl implements CashRegisterService {
 
     @Override
     public String validateUser(String login, String password) {
+
         return customerDAO.validateUser(login, password);
     }
 
@@ -39,11 +41,8 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     }
 
     @Override
-    public String registerUser(String login, String password, String role) {
-
-
-
-
-        return null;
+    public String registerUser(User user) {
+        user.setPassword(BCryptPassword.hashPassword(user.getPassword()));
+        return customerDAO.registerUser(user);
     }
 }

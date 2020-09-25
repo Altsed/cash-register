@@ -5,6 +5,7 @@ public class User {
     private String login;
     private String password;
     private int role;
+    private boolean isValid;
     private String message;
 
     public User(String login, String password, int role) {
@@ -13,7 +14,12 @@ public class User {
         this.role = role;
     }
 
+
     public User() {
+    }
+
+    public int getRole() {
+        return role;
     }
 
     public boolean validate(){
@@ -29,7 +35,20 @@ public class User {
             message = "Login must contains only letters and numbers";
             return false;
         }
-        return true;
+
+        return isValid = true;
+    }
+
+    public boolean isValid() {
+        return isValid;
+    }
+
+    public void setValid(boolean valid) {
+        isValid = valid;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getMessage() {
@@ -42,5 +61,9 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String hashPassword) {
+        password = hashPassword;
     }
 }

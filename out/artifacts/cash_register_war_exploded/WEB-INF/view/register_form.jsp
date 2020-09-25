@@ -50,7 +50,7 @@
            </div>
            <div class="form-group">
              <label for="exampleInputPassword">Role</label>
-             <jsp:useBean id="roles" scope="request" type="java.util.List"/>
+             <jsp:useBean id="roles" scope="session" type="java.util.List"/>
              <select class="form-control" name="role" required>
                <option value="" selected disabled hidden>Choose role</option>
                <c:forEach items="${roles}"  var="role">
