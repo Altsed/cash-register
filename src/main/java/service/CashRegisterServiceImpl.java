@@ -4,7 +4,9 @@ import dao.CustomerDAO;
 import dao.CustomerDAOPostgresqlImpl;
 import entity.Product;
 import entity.Role;
+import entity.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public class CashRegisterServiceImpl implements CashRegisterService {
@@ -34,5 +36,14 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     @Override
     public List<Role> getRoles() {
         return customerDAO.getRoles();
+    }
+
+    @Override
+    public String registerUser(String login, String password, String role) {
+
+
+
+
+        return null;
     }
 }

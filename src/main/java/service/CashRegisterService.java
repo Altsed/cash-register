@@ -12,4 +12,6 @@ public interface CashRegisterService {
     String validateUser(String login, String password);
 
     List<Role> getRoles();
+
+    String registerUser(String login, String password, String role);
 }

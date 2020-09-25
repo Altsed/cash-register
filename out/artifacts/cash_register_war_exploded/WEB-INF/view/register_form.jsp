@@ -26,7 +26,8 @@
        <div class="col-md-6 col-md-offset-2">
          <hr>
          <h2 class="page-header">Please login or register</h2>
-         <form name="loginForm" method="GET" action="Login">
+         <form name="registration-form" method="GET" >
+           <input hidden name="registration"/>
            <div class="form-group">
              <label for="login">Login</label>
              <input type="login"
@@ -34,6 +35,7 @@
                     class="form-control"
                     id="login"
                     placeholder="Login"
+                    required
              >
            </div>
            <div class="form-group">
@@ -43,12 +45,13 @@
                     class="form-control"
                     id="exampleInputPassword"
                     placeholder="Password"
+                    required
              >
            </div>
            <div class="form-group">
              <label for="exampleInputPassword">Role</label>
              <jsp:useBean id="roles" scope="request" type="java.util.List"/>
-             <select class="form-control">
+             <select class="form-control" name="role" required>
                <option value="" selected disabled hidden>Choose role</option>
                <c:forEach items="${roles}"  var="role">
                  <option value="${role.id}">${role.name}
@@ -57,7 +60,7 @@
              </select>
             </div>
            <hr>
-              <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register">Register</button>
+              <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register" >Register</button>
          </form>
 
        </div>
