@@ -27,8 +27,8 @@
        <div class="col-md-6 col-md-offset-2">
          <hr>
          <h2 class="page-header">Please login or register</h2>
-         <h4 class="page-header">${requestScope.message}</h4>
-         <form name="registration-form" method="GET" >
+         <h4 style="color:yellow;"class="page-header">${requestScope.message}</h4>
+         <form name="registration-form" method="POST" >
            <input hidden name="registration"/>
            <div class="form-group">
              <label for="login">Login</label>
@@ -62,7 +62,7 @@
              </select>
             </div>
            <hr>
-              <button onclick="location.href='index.jsp'" class="btn" ><i class="fa fa-back"></i>Back</button>
+              <button onclick="location.href='index.jsp'" class="btn btn-secondary mr-2" ></i>Back</button>
               <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register" >Register</button>
 
          </form>

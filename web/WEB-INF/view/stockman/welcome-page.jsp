@@ -27,10 +27,17 @@
     <div class="d-flex h-100">
         <div class="align-self-start mr-auto">
             <hr>
-            <h4>Welcome!</h4>
+            <input type="button" class="btn btn-secondary mr-2" name="command" value="list-products"
+                   onclick="window.location.href='vessels'; return false">
+
+           <button type="submit" class="btn btn-secondary mr-2" name="command" value="list-products" >List of Products</button>
+
             <hr>
         </div>
     </div>
+
+
+
 </div>
 
 </body>

@@ -1,3 +1,5 @@
 
-O
-java:S1128"2Remove this unused import 'java.util.Enumeration'.(»îÜ®8‘ã£Ì.
+l
+java:S1192"LDefine a constant instead of duplicating this literal "login-error" 3 times.(¿¹¡úÿÿÿÿ8º–ğ°Ì.
+M
+java:S1128"2Remove this unused import 'java.util.Enumeration'.(»îÜ®8‘ã£Ì.

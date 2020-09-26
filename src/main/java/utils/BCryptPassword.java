@@ -1,4 +1,4 @@
-package validation;
+package utils;
 
 import org.mindrot.jbcrypt.BCrypt;
 

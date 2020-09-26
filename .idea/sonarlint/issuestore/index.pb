@@ -39,8 +39,6 @@ Z
 *web/WEB-INF/view/stockman/welcome-page.jsp,2\5\25536f0be761247f1506c3cc3b94342e52e4b467
 K
 web/WEB-INF/view/header.jsp,3\9\397ea7ace55bb063bc76a1c96ca16a171706046b
-O
-web/WEB-INF/view/loginError.jsp,b\c\bc5fdff4c1b8dcf547a5c245847f84dd502e7619
 ^
 .src/main/java/service/CashRegisterService.java,e\1\e1c909aebc48c6a4880f643fec700547c64c6981
 J
@@ -63,5 +61,9 @@ R
 "web/WEB-INF/view/register_form.jsp,4\6\462ec1c2fd58f1206d8f0909365b6a06e5f14256
 X
 (web/WEB-INF/view/register_error_form.jsp,f\0\f070ff6ca5145e4fa4a3edc9eba6d790317d0882
-E
-web/WEB-INF/index.jsp,6\2\629f349cba3b679de4d2e2211d6e7e6f6131c0ad
+=
+web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
+P
+ web/WEB-INF/view/login-error.jsp,1\a\1a5e4732d5ada90672532944f6a7d814a13e0b70
+`
+0web/WEB-INF/view/chief-operator/welcome-page.jsp,4\9\492b91346156af1c211b41b95e905d84d25f0a49

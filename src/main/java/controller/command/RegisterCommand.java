@@ -19,7 +19,7 @@ public class RegisterCommand extends FrontCommand {
             List<Role> roles = cashRegisterService.getRoles();
             HttpSession session = request.getSession();
             session.setAttribute("roles", roles);
-            forward("register_form");
+            forward("register-form");
         }
 
         User user = new User(request.getParameter("login"),
@@ -28,15 +28,15 @@ public class RegisterCommand extends FrontCommand {
 
        if (!user.validate()) {
             removeAndSetAttributes(user);
-            forward("register_error_form");
+            forward("register-error-form");
         } else {
             cashRegisterService.registerUser(user);
             if (!user.isValid()) {
                 removeAndSetAttributes(user);
-                forward("register_error_form");
+                forward("register-error-form");
             }
             request.setAttribute("message", "User was successfully registered");
-            forward("register_form");
+            forward("register-form");
         }
 
     }

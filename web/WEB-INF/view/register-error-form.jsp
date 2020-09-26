@@ -27,7 +27,7 @@
          <hr>
 <%--         <h4 class="page-header"><%= request.getAttribute("message") %></h4>--%>
          <h4 class="page-header">${requestScope.message}</h4>
-         <form name="loginForm" method="GET">
+         <form name="loginForm" method="POST">
            <input hidden name="registration"/>
            <div class="form-group">
              <label for="login">Login</label>
@@ -35,6 +35,9 @@
                     name="login"
                     class="form-control"
                     id="login"
+                    placeholder="login"
+                    value=${requestScope.login}
+
              >
            </div>
            <div class="form-group">
@@ -58,6 +61,7 @@
              </select>
             </div>
            <hr>
+             <button onclick="window.location.href='index.jsp'" class="btn btn-secondary mr-2" ></i>Back</button>
               <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register">Register</button>
          </form>
 

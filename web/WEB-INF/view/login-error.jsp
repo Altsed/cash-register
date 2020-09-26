@@ -23,7 +23,7 @@
        <div class="col-md-6 col-md-offset-2">
          <hr>
          <h2 class="page-header">Please check login/password</h2>
-         <form name="loginForm" method="GET" action="Login">
+         <form name="loginForm" method="POST" action="Login" >
            <div class="form-group">
              <label for="login">Login</label>
              <input type="login"
@@ -31,6 +31,7 @@
                     class="form-control"
                     id="login"
                     placeholder="Login"
+                    value=${requestScope.login}
              >
            </div>
            <div class="form-group">

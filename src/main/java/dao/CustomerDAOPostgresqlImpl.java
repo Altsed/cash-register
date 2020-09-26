@@ -3,15 +3,12 @@ package dao;
 import entity.Product;
 import entity.Role;
 import entity.User;
-import validation.BCryptPassword;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import static dao.query.SqlQuery.*;
-import static validation.BCryptPassword.checkPass;
-import static validation.BCryptPassword.hashPassword;
 
 public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 

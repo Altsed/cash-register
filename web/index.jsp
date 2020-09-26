@@ -23,7 +23,7 @@
        <div class="col-md-6 col-md-offset-2">
          <hr>
          <h2 class="page-header">Please login or register</h2>
-         <form name="loginForm" method="GET" action="Login">
+         <form name="loginForm" method="POST" action="welcome-page">
            <div class="form-group">
              <label for="login">Login</label>
              <input type="login"
@@ -45,7 +45,9 @@
              >
            </div>
              <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login">Login</button>
-           <button type="submit" class="btn btn-secondary" name="command" value="Register">Register</button>
+         </form>
+           <form name="registerForm" method="POST" action="register">
+             <button type="submit" class="btn btn-secondary" name="command" value="Register">Register</button>
            </form>
 
        </div>
