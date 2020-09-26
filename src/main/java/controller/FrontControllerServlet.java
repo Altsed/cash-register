@@ -38,10 +38,19 @@ public class FrontControllerServlet extends HttpServlet {
         System.out.println(request.getRequestURL());
 
         try {
-            System.out.println(request.getParameter("command"));
+            String parameter;
+
+            if (request.getSession().getAttribute("command") != null) {
+                parameter = (String)request.getSession().getAttribute("command");
+                request.getSession().removeAttribute("command");
+            }
+            else {
+                parameter = request.getParameter("command");
+            }
+
             String commandNameClass = String.format(
                     "controller.command.%sCommand",
-                    request.getParameter("command"));
+                    parameter);
             Class<?> c = Class.forName(commandNameClass);
             Constructor<?> []cons = c.getConstructors();
             return (FrontCommand) cons[0].newInstance();

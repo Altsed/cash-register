@@ -26,7 +26,7 @@
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
-         <h2 class="page-header">Please login or register</h2>
+         <h2 class="page-header">Registration form</h2>
          <h4 style="color:yellow;"class="page-header">${requestScope.message}</h4>
          <form name="registration-form" method="POST" >
            <input hidden name="registration"/>

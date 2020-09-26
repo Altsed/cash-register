@@ -6,6 +6,7 @@ import entity.Role;
 import service.CashRegisterService;
 import utils.HttpUtils;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -27,9 +28,15 @@ public class LoginCommand extends FrontCommand{
         }
         HttpUtils.setRoleToSession(request, roleName);
         HttpUtils.storeRoleInCookie(response, roleName);
-        System.out.println("role from session, in loginComman: " + request.getSession().getAttribute("role"));
+        request.getSession().setAttribute("command", roleName + "Welcome");
 
-        forward(roleName + "/welcome-page");
+        System.out.println("role from session, in loginComman: " + request.getSession().getAttribute("role"));
+        System.out.println("command from session, in loginComman: " + request.getSession().getAttribute("command"));
+
+        response.sendRedirect(roleName + "/welcome-page");
+
+
+        //forward(roleName + "/welcome-page");
 
    }
 }

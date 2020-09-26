@@ -33,7 +33,7 @@
                     <button type="submit" class="btn btn-secondary mr-2" name="command"
                             value="ListProducts">List of Products</button>
                 </form>
-                <form name="addProductForm" method="POST" action="${cookie.get("role").value}/add-product">
+                <form name="addProductForm" method="POST" action="add-product">
                     <button type="submit" class="btn btn-secondary mr-2" name="command" value="AddProduct">Add Product
                     </button>
                 </form>

@@ -28,6 +28,18 @@
     <div class="d-flex h-100">
         <div class="align-self-start mr-auto">
             <hr>
+<%--            <div class="form-row">--%>
+<%--                <form name="listForm" method="POST" action="list-products">--%>
+<%--                    <button type="submit" class="btn btn-secondary mr-2" name="command"--%>
+<%--                            value="ListProducts">List of Products</button>--%>
+<%--                </form>--%>
+<%--                <form name="addProductForm" method="POST" action="add-product">--%>
+<%--                    <button type="submit" class="btn btn-secondary mr-2" name="command" value="AddProduct">Add Product--%>
+<%--                    </button>--%>
+<%--                </form>--%>
+<%--            </div>--%>
+
+            <hr>
             <form name="addProductForm" method="POST" action="add-product">
                 <div class="container-fluid">
                     <table class="table table-bordered table-hover">
