@@ -27,6 +27,7 @@ public class LoginCommand extends FrontCommand{
         }
         HttpUtils.setRoleToSession(request, roleName);
         HttpUtils.storeRoleInCookie(response, roleName);
+        System.out.println("role from session, in loginComman: " + request.getSession().getAttribute("role"));
 
         forward(roleName + "/welcome-page");
 

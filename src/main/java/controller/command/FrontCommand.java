@@ -30,6 +30,7 @@ public abstract class FrontCommand {
 
             target = String.format("/WEB-INF/view/%s.jsp", target);
             RequestDispatcher dispatcher = context.getRequestDispatcher(target);
+            System.out.println("in fron commander: " + request.getRequestURL());
             dispatcher.forward(request, response);
         }
 

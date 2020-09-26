@@ -18,6 +18,7 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     @Override
     public void getProduct() {
 
+
     }
 
     @Override
@@ -26,7 +27,7 @@ public class CashRegisterServiceImpl implements CashRegisterService {
 
     @Override
     public List<Product> getProducts() {
-        return null;
+        return customerDAO.getProducts();
     }
 
 
@@ -57,4 +58,5 @@ public class CashRegisterServiceImpl implements CashRegisterService {
         user.setPassword(BCryptPassword.hashPassword(user.getPassword()));
         return customerDAO.registerUser(user);
     }
+
 }

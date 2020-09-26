@@ -8,6 +8,8 @@ public class SqlQuery {
     public static final String GET_ROLE_FOR_THE_USER = "SELECT name FROM user_role WHERE id=?";
     public static final String CREATE_USER = "INSERT INTO user_account (login, password, role_id) VALUES\n" +
             "(?, ?, ?);";
+    public static final String GET_PRODUCTS = "SELECT * FROM product FULL OUTER JOIN  warehouse w on product.id = w.product_id";
+
 
 
 }

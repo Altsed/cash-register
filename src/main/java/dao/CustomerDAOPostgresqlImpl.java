@@ -25,7 +25,30 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
     @Override
     public List<Product> getProducts() {
-        return null;
+        List<Product> products = new ArrayList<>();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try(Connection connection = connectionBuilder.getConnection()){
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(GET_PRODUCTS);
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String nameOfProduct = resultSet.getString("name");
+                boolean isWeight = resultSet.getBoolean("is_weight");
+                double stock;
+                if (isWeight) {
+                    stock = resultSet.getDouble("available_weight");
+                }else {
+                    stock = resultSet.getDouble("available_quantity");
+                }
+                products.add( new Product (id, nameOfProduct, isWeight, stock));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            closeStatmentAndResultSet(statement, resultSet);
+        }
+        return products;
     }
 
     @Override

@@ -5,16 +5,36 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Product implements Datable{
+public class Product {
     private int id;
     private String name;
     private boolean isWeight;
+    private double stock;
 
-    List<String> getFields(){
-        Field[] field = Receipt.class.getDeclaredFields();
-        ArrayList<String> result = new ArrayList<>();
-        Arrays.stream(field).forEach(x->result.add(x.getName()));
-        return result;
+    public Product(int id, String name, boolean isWeight, double stock) {
+        this.id = id;
+        this.name = name;
+        this.isWeight = isWeight;
+        this.stock = stock;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public boolean getIsWeight() {
+        return isWeight;
+    }
+
+    public boolean isWeight() {
+        return isWeight;
+    }
+
+    public double getStock() {
+        return stock;
+    }
 }
