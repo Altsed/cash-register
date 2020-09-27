@@ -12,6 +12,6 @@ public class BCryptPassword {
     }
 
     public static void main(String[] args) {
-        System.out.println(BCrypt.hashpw("1", BCrypt.gensalt()));
+        System.out.println(BCrypt.hashpw("2", BCrypt.gensalt()));
     }
 }

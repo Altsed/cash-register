@@ -1,9 +1,6 @@
 package service;
 
-import entity.Datable;
-import entity.Product;
-import entity.Role;
-import entity.User;
+import entity.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -22,4 +19,6 @@ public interface CashRegisterService {
 
 
     void updateStock(Product product);
+
+    List<Receipt> getReceipts();
 }

@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.List;
 
-public class UpdateStockCommand extends FrontCommand{
+public class StockmanUpdateStockCommand extends FrontCommand{
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
 
@@ -22,7 +22,7 @@ public class UpdateStockCommand extends FrontCommand{
         if (!isWeight && stock % 1 != 0) {
             request.setAttribute("products", cashRegisterService.getProducts());
             request.setAttribute("message", "It not weight product, quantity must be whole number");
-            request.setAttribute("command", "stockmanWelcome");
+            request.setAttribute("command", "StockmanWelcome");
             forward( "stockman/welcome-page");
             return;
         }

@@ -49,10 +49,6 @@
             <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login">Login</button>
            <button formaction="register" type="submit" class="btn btn-secondary" name="command" value="Register">Register</button>
          </form>
-<%--           <form name="registerForm" method="POST" action="register">--%>
-<%--            <button type="submit" class="btn btn-secondary" name="command" value="Register">Register</button> --%>
-<%--           </form>--%>
-
        </div>
      </div>
    </div>

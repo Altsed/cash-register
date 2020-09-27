@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
-public class AddProductCommand extends FrontCommand{
+public class StockmanAddProductCommand extends FrontCommand{
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
         List<Product> products = cashRegisterService.getProducts();
@@ -23,7 +23,7 @@ public class AddProductCommand extends FrontCommand{
             request.setAttribute("products", products);
             request.setAttribute("message", "Product already exists");
             request.setAttribute("nameOfProduct", product.getName());
-            request.setAttribute("command", "stockmanWelcome");
+            request.setAttribute("command", "StockmanWelcome");
             forward( "stockman/welcome-page");
             return;
         }

@@ -1,6 +1,7 @@
 package dao;
 
 import entity.Product;
+import entity.Receipt;
 import entity.Role;
 import entity.User;
 
@@ -21,4 +22,6 @@ public interface CustomerDAO {
     String getRoleForUser(User user);
 
     void updateStock(Product product);
+
+    List<Receipt> getReceipts();
 }

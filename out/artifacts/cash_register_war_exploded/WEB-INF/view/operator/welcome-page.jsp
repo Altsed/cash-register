@@ -27,15 +27,15 @@
 <jsp:useBean id="products" scope="request" type="java.util.List"/>
 <script>
     function validateform(){
-        var name=document.addProductForm.name.value;
         var stock=document.addProductForm.stock.value;
         if(!$('#weight').is(":checked") && stock % 1 != 0){
             alert("It not weight product, quantity must be whole number");
             return false;
         }
      }
-</script>
 
+
+</script>
 
 <div class="container h-100">
     <div class="d-flex h-100">
@@ -84,47 +84,18 @@
                             <td>${products.isWeight}</td>
                             <td>${products.stock}</td>
                             <td>
-                                <button id="${products.id}" type="submit" name="command" value="UpdateStock" method="POST" action="update-quantity">Update quantity</button>
 
-<%--                                <a href="${updateLink}">Update</a>--%>
-                                <button type="button" class="btn-secondary btn-sm" data-toggle="modal"
-                                        data-target="#exampleModal"
-                                        data-whatever="@mdo">Update stock
-                                </button>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Enter new quantity</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form name="updateStockForm" method="POST" action="update-quantity">
-                                                    <div class="form-group">
-                                                        <label for="product-name"
-                                                               class="col-form-label">${updateLinkName}</label>
-                                                        <input type="number" step="0.01" min="0" name=stock id="product-name"/>
-                                                        <input hidden type="text" name="nameOfProduct" value="${nameOfProduct}"/>
-                                                        <input hidden type="text" name="productId" value="${productId}"/>
-                                                        <input hidden type="text" name="isWeight" value="${isWeight}"/>
-                                                        <input hidden type="text" name="iupDateLink" value="${updateLink}"/>
+                                    <form name="updateQuantityForm" method="POST" action="update-quantity">
+                                        <input type="number" step="0.01" min="0" name="stock"/>
+                                        <input hidden type="text" name="nameOfProduct" value="${products.name}"/>
+                                        <input hidden type="text" name="isWeight" value="${products.isWeight}"/>
+                                        <input hidden name="productId" value="${products.id}">
+                                        <button type="submit" class="btn btn-secondary btn-sm" name="command" value="UpdateStock" method="POST" action="update-quantity">Update quantity</button>
+                                    </form>
 
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-secondary btn-sm" name="command" value="UpdateStock">Change quantity</button>
-                                                    </div>
-                                                </form>
-                                            </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
+
+                             </td>
 
                         </tr>
                     </c:forEach>

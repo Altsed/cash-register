@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
-public class stockmanWelcomeCommand extends FrontCommand{
+public class StockmanWelcomeCommand extends FrontCommand{
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
         List<Product> products = cashRegisterService.getProducts();

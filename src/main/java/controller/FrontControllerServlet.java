@@ -39,7 +39,6 @@ public class FrontControllerServlet extends HttpServlet {
 
         try {
             String parameter;
-
             if (request.getSession().getAttribute("command") != null) {
                 parameter = (String)request.getSession().getAttribute("command");
                 request.getSession().removeAttribute("command");
@@ -47,8 +46,8 @@ public class FrontControllerServlet extends HttpServlet {
             else {
                 parameter = request.getParameter("command");
             }
-
             System.out.println("Parameter in FRONT: " + parameter);
+            System.out.println("Requested URL " + request.getRequestURI());
 
             String commandNameClass = String.format(
                     "controller.command.%sCommand",

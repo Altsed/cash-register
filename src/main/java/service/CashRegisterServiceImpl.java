@@ -2,10 +2,7 @@ package service;
 
 import dao.CustomerDAO;
 import dao.CustomerDAOPostgresqlImpl;
-import entity.Datable;
-import entity.Product;
-import entity.Role;
-import entity.User;
+import entity.*;
 import utils.BCryptPassword;
 import utils.HttpUtils;
 
@@ -63,4 +60,8 @@ public class CashRegisterServiceImpl implements CashRegisterService {
         return customerDAO.registerUser(user);
     }
 
+    @Override
+    public List<Receipt> getReceipts() {
+        return customerDAO.getReceipts();
+    }
 }
