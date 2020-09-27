@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS warehouse, product, receipt_master, 
-receipt_detail, user_account, user_role CASCADE;
+DROP TABLE IF EXISTS warehouse, product, receipt,
+receipt_has_product, user_account, user_role CASCADE;
 DROP SEQUENCE IF EXISTS product_seq, user_role_seq, 
-user_account_seq, warehouse_seq, receipt_master_seq, receipt_detail_seq CASCADE;
+user_account_seq, warehouse_seq, receipt_seq CASCADE;
 
 
 CREATE SEQUENCE product_seq;
@@ -33,9 +33,8 @@ CREATE TABLE user_account (
 CREATE SEQUENCE warehouse_seq;
 CREATE TABLE warehouse (
   id int NOT NULL DEFAULT NEXTVAL ('warehouse_seq'),
-  product_id int NOT NULL,
-  available_quantity int,
-  available_weight real,
+  product_id int NOT NULL UNIQUE NOT NULL ,
+  available_quantity real,
   PRIMARY KEY (id),
 	CONSTRAINT FK_PRODUCT
 	FOREIGN KEY (product_id)

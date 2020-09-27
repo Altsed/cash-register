@@ -1,9 +1,9 @@
 
-œ
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Û—ĞÚ8Òá‰¡Ì.
-W
-java:S1128"7Remove this unused import 'javax.jws.soap.SOAPBinding'.(î¶âÑûÿÿÿÿ8…‘‘¡Ì.
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8Òá‰¡Ì.
-F
-java:S1168"+Return an empty collection instead of null.(¥¹ï8Òá‰¡Ì.
+b
+java:S1854'"@Remove this useless assignment to local variable "hashPassword".(æÆÛÁùÿÿÿÿ8›®ĞÌ.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8Òá‰¡Ì.
+S
+java:S1481'"1Remove this unused "hashPassword" local variable.(æÆÛÁùÿÿÿÿ8›®ĞÌ.
+M
+java:S1128"+Remove this unused import 'entity.Datable'.(œ¼Æİüÿÿÿÿ8Èû‰ĞÌ.

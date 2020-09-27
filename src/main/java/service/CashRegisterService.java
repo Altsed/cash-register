@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface CashRegisterService {
     void getProduct();
-    void createProduct();
+    void createProduct(Product product);
     List<Product> getProducts();
     String validateUser(String login, String password);
 
@@ -21,4 +21,5 @@ public interface CashRegisterService {
     void loginApproved(HttpServletRequest request, String roleName);
 
 
+    void updateStock(Product product);
 }

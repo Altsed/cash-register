@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface CustomerDAO {
     void getProduct();
-    void createProduct();
+    void createProduct(Product product);
+
     List<Product> getProducts();
 
     User validateUser(String login);
@@ -18,4 +19,6 @@ public interface CustomerDAO {
     String registerUser(User user);
 
     String getRoleForUser(User user);
+
+    void updateStock(Product product);
 }

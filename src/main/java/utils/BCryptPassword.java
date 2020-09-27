@@ -10,4 +10,8 @@ public class BCryptPassword {
     public static String hashPassword(String plainTextPassword){
         return BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
     }
+
+    public static void main(String[] args) {
+        System.out.println(BCrypt.hashpw("1", BCrypt.gensalt()));
+    }
 }

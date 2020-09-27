@@ -1,3 +1,7 @@
 
-Z	Web:S5254	"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ
-cWeb:DoctypePresenceCheck	":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷Ãûÿÿÿÿ
+OWeb:TableWithoutCaptionCheck?" Add a description to this table.(éÇ¦”8Š†‚óÌ.
+jWeb:DoctypePresenceCheck
+":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷Ãûÿÿÿÿ8éĞ‹áÌ.
+a	Web:S5254
+"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8éĞ‹áÌ.
+OWeb:TableWithoutCaptionCheck/" Add a description to this table.(éÇ¦”8¤Ù•áÌ.

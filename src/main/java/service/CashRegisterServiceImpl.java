@@ -22,7 +22,8 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     }
 
     @Override
-    public void createProduct() {
+    public void createProduct(Product product) {
+        customerDAO.createProduct(product);
     }
 
     @Override
@@ -30,7 +31,10 @@ public class CashRegisterServiceImpl implements CashRegisterService {
         return customerDAO.getProducts();
     }
 
-
+    @Override
+    public void updateStock(Product product) {
+        customerDAO.updateStock(product);
+    }
 
     @Override
     public String validateUser(String login, String password) {

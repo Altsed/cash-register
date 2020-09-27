@@ -18,9 +18,21 @@ public class Product {
         this.stock = stock;
     }
 
+
+
+    public Product(String name, boolean isWeight, double stock) {
+        this.name = name;
+        this.isWeight = isWeight;
+        this.stock = stock;
+    }
+
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getName() {
         return name;
@@ -36,5 +48,20 @@ public class Product {
 
     public double getStock() {
         return stock;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        return name.equals(product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 }
