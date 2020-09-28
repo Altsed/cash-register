@@ -48,14 +48,16 @@
                 <div class="container-fluid">
                     <table class="table table-bordered table-hover">
                         <tr>
+                            <th scope="col">Reference</th>
                             <th scope="col">Name</th>
-                            <th scope="col">is weight</th>
-                            <th scope="col">on stock</th>
+                            <th scope="col">Is weight</th>
+                            <th scope="col">On stock</th>
                         </tr>
                         <tr>
+                            <td><input name="reference" value="${requestScope.referenceOfProduct}" required></input></td>
                             <td><input name="name" value="${requestScope.nameOfProduct}" required></input></td>
                             <td><input id="weight" class="weight_checkbox" type="checkbox" name="isWeight"></input></td>
-                            <td><input type="number" step="0.01" min="0" name="stock"></input></td>
+                            <td><input type="number" step="0.01" min="0" name="stock" required></input></td>
                             <td><button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.AddProduct">Add product</button>
                         </tr>
                     </table>
@@ -64,10 +66,11 @@
             <div class="container-fluid">
                 <table class="table table-bordered table-hover" id="table">
                     <tr>
+                        <th scope="col">Reference</th>
                         <th scope="col">Name</th>
-                        <th scope="col">is weight</th>
-                        <th scope="col">on stock</th>
-                        <th scope="col">action</th>
+                        <th scope="col">Is weight</th>
+                        <th scope="col">On stock</th>
+                        <th scope="col">Action</th>
 
                     </tr>
 
@@ -81,6 +84,7 @@
 
                         </c:url>
                         <tr>
+                            <td>${products.reference}</td>
                             <td>${products.name}</td>
                             <td>${products.isWeight}</td>
                             <td>${products.stock}</td>

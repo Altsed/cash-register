@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Product {
     private int id;
+    private String reference;
     private String name;
     private boolean isWeight;
     private double stock;
@@ -18,12 +19,38 @@ public class Product {
         this.stock = stock;
     }
 
+    public Product(String reference, String name, double stock) {
+        this.reference = reference;
+        this.name = name;
+        this.stock = stock;
+    }
 
-
-    public Product(String name, boolean isWeight, double stock) {
+    public Product(String reference, String name, boolean isWeight, double stock) {
+        this.reference = reference;
         this.name = name;
         this.isWeight = isWeight;
         this.stock = stock;
+    }
+
+    public Product(int id, String reference, String name, boolean isWeight, double stock) {
+        this.id = id;
+        this.reference = reference;
+        this.name = name;
+        this.isWeight = isWeight;
+        this.stock = stock;
+    }
+
+    public Product(int id, String reference, String name, boolean isWeight) {
+        this.id = id;
+        this.reference = reference;
+        this.name = name;
+        this.isWeight = isWeight;
+    }
+
+    public Product(int id, String reference, String name) {
+        this.id = id;
+        this.reference = reference;
+        this.name = name;
     }
 
     public int getId() {
@@ -33,6 +60,13 @@ public class Product {
         this.id = id;
     }
 
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
     public String getName() {
         return name;

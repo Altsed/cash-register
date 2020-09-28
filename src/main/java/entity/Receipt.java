@@ -1,15 +1,33 @@
 package entity;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Receipt implements Datable{
-    Map<Product, Double> productList;
+    int id;
+    Map<Product, Double> productList = new HashMap<>();
     User user;
     boolean isClosed;
+
+    public int getId() {
+        return id;
+    }
+
+    public Map<Product, Double> getProductList() {
+        return productList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setProductList(Map<Product, Double> productList) {
+        this.productList = productList;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     List<String> getFields(){
         Field[] field = Receipt.class.getDeclaredFields();

@@ -43,10 +43,12 @@ CREATE TABLE warehouse (
 );
 
 CREATE SEQUENCE receipt_seq;
+CREATE TYPE receipt_status AS ENUM ('open', 'closed', 'canceled');
 CREATE TABLE receipt (
   id int NOT NULL DEFAULT NEXTVAL ('receipt_seq'),
   user_id int NOT NULL,
   is_closed boolean DEFAULT false,
+  status receipt_status DEFAULT 'open';
   	PRIMARY KEY (id),
 	CONSTRAINT FK_USER
 	FOREIGN KEY (user_id)

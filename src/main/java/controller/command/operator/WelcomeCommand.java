@@ -9,13 +9,15 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 public class WelcomeCommand extends FrontCommand {
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
-        List<Receipt> receipts = cashRegisterService.getReceipts();
-        request.setAttribute("receipts", receipts);
-        forward( "operator/welcome-page");
+        Receipt receipt = new Receipt();
+        request.setAttribute("message", "Create new Receipt: ");
+        request.setAttribute("receipt", receipt.getProductList());
 
+        forward( "operator/welcome-page");
     }
 }

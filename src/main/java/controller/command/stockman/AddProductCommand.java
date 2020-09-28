@@ -15,14 +15,15 @@ public class AddProductCommand extends FrontCommand {
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
         List<Product> products = cashRegisterService.getProducts();
         products.sort(Comparator.comparing(Product::getName));
+        String referenceOfProduct = request.getParameter("reference");
         String nameOfProduct = request.getParameter("name");
         boolean isWeight = Boolean.getBoolean(request.getParameter("isWeight"));
         double stock = Double.parseDouble(request.getParameter("stock"));
-        Product product = new Product(nameOfProduct, isWeight, stock);
 
-        if (products.contains(product)) {
+        Product product = new Product(referenceOfProduct, nameOfProduct, isWeight, stock);
+        if (cashRegisterService.isProductExists(referenceOfProduct, nameOfProduct)) {
             request.setAttribute("products", products);
-            request.setAttribute("message", "Product already exists");
+            request.setAttribute("message", "Product is already exists");
             request.setAttribute("nameOfProduct", product.getName());
             request.setAttribute("command", "StockmanWelcome");
             forward( "stockman/welcome-page");

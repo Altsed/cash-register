@@ -13,12 +13,6 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     CustomerDAO customerDAO = new CustomerDAOPostgresqlImpl();
 
     @Override
-    public void getProduct() {
-
-
-    }
-
-    @Override
     public void createProduct(Product product) {
         customerDAO.createProduct(product);
     }
@@ -36,12 +30,15 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     @Override
     public String validateUser(String login, String password) {
         User user = customerDAO.validateUser(login);
-        String hashPassword = BCryptPassword.hashPassword(password);
-
-        if (user == null || user.getLogin() == null || !BCryptPassword.checkPass(password, user.getPassword())) {
+         if (user == null || user.getLogin() == null || !BCryptPassword.checkPass(password, user.getPassword())) {
             return "login-error";
         }
         return customerDAO.getRoleForUser(user);
+    }
+
+    @Override
+    public int getLoginId(String login) {
+        return customerDAO.getLoginId(login);
     }
 
     @Override
@@ -63,5 +60,33 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     @Override
     public List<Receipt> getReceipts() {
         return customerDAO.getReceipts();
+    }
+
+    @Override
+    public boolean isProductExists(String reference, String name) {
+        return customerDAO.isProductExists(reference, name);
+    }
+
+    @Override
+    public Product getProduct(String reference, String name) {
+        return customerDAO.getProduct(reference, name);
+    }
+
+    @Override
+    public int addProductToReceipt(int receiptId, Product product, int user_id, double quantity) {
+        return customerDAO.addProductToReceipt(receiptId, product, user_id, quantity);
+    }
+    @Override
+    public Receipt getReceipt(int receiptId) {
+        return customerDAO.getReceipt(receiptId);
+    }
+    @Override
+    public User getUserByID(int user_id) {
+        return customerDAO.getUserById(user_id);
+    }
+
+    @Override
+    public double getStockForProduct(Product product) {
+        return customerDAO.getStockForProduct(product);
     }
 }

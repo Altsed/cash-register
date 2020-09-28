@@ -25,4 +25,17 @@ public class HttpUtils {
     }
 
 
+    public static void storeLoginIdCookie(HttpServletResponse response, int loginId) {
+        Cookie cookie = new Cookie("user_id", String.valueOf(loginId));
+        cookie.setMaxAge(10*60);
+        response.addCookie(cookie);
+    }
+    public static int getUserIdFromCookie(HttpServletRequest request){
+        for (Cookie cookie : request.getCookies()){
+            if ("user_id".equals(cookie.getName())){
+                return Integer.parseInt(cookie.getValue());
+            }
+        }
+       return 0;
+    }
 }
