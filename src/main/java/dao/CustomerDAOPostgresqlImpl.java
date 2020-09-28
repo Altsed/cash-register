@@ -205,25 +205,25 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
     @Override
     public List<Receipt> getReceipts() {
-        List<Product> receipts = new ArrayList<>();
-        Statement statement = null;
-        ResultSet resultSet = null;
-        try(Connection connection = connectionBuilder.getConnection()){
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(GET_PRODUCTS);
-            while (resultSet.next()){
-                int id = resultSet.getInt("id");
-                String nameOfProduct = resultSet.getString("name");
-                boolean isWeight = resultSet.getBoolean("is_weight");
-                double stock = resultSet.getDouble("available_quantity");
-                products.add( new Product (id, nameOfProduct, isWeight, stock));
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } finally {
-            closeStatmentAndResultSet(statement, resultSet);
-        }
-        return products;
+//        List<Product> receipts = new ArrayList<>();
+//        Statement statement = null;
+//        ResultSet resultSet = null;
+//        try(Connection connection = connectionBuilder.getConnection()){
+//            statement = connection.createStatement();
+//            resultSet = statement.executeQuery(GET_PRODUCTS);
+//            while (resultSet.next()){
+//                int id = resultSet.getInt("id");
+//                String nameOfProduct = resultSet.getString("name");
+//                boolean isWeight = resultSet.getBoolean("is_weight");
+//                double stock = resultSet.getDouble("available_quantity");
+//                products.add( new Product (id, nameOfProduct, isWeight, stock));
+//            }
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        } finally {
+//            closeStatmentAndResultSet(statement, resultSet);
+//        }
+        return null;
     }
 
     private void closeStatmentAndResultSet(Statement statement, ResultSet resultSet){

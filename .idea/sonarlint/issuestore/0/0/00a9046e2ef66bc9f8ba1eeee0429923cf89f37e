@@ -1,17 +1,18 @@
 
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(ÿÕöşúÿÿÿÿ8ê®İ‰Í.
+ƒ
+java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8ê®İ‰Í.
+b
+java:S2259"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥ş8ê®İ‰Í.
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(¶çÎüÿÿÿÿ8ê®İ‰Í.
 r
-java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çØß8úÉƒÍÌ.
+java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çØß8ê®İ‰Í.
+ƒ
+java:S1989"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8ê®İ‰Í.
+b
+java:S2259!"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥ş8ê®İ‰Í.
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(‘©¢“8÷÷ŠÍ.
 u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(İ¤®ò8úÉƒÍÌ.
-b
-java:S2259"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥ş8úÉƒÍÌ.
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(İ¤®ò8ê®İ‰Í.
 e
-java:S1192+"HDefine a constant instead of duplicating this literal "command" 4 times.(Â‚Ê¬8é›‡àÌ.
-b
-java:S2259!"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥ş8úÉƒÍÌ.
-ƒ
-java:S1989"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8úÉƒÍÌ.
-ƒ
-java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8úÉƒÍÌ.
-Z	java:S1063"9Replace this use of System.out or System.err by a logger.(ÿÕöşúÿÿÿÿ8Ü™ôôÌ.
-Z	java:S106&"9Replace this use of System.out or System.err by a logger.(¶çÎüÿÿÿÿ8ñªÊÍÌ.
+java:S1192*"HDefine a constant instead of duplicating this literal "command" 4 times.(Â‚Ê¬8ê®İ‰Í.

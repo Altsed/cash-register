@@ -1,5 +1,6 @@
-package controller.command;
+package controller.command.stockman;
 
+import controller.command.FrontCommand;
 import entity.Product;
 import service.CashRegisterService;
 
@@ -9,7 +10,7 @@ import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.List;
 
-public class StockmanUpdateStockCommand extends FrontCommand{
+public class UpdateStockCommand extends FrontCommand {
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
 

@@ -1,22 +1,20 @@
 
-H
-java:S1128"+Remove this unused import 'entity.Receipt'.(¨—÷ú8…ù•–Ã.
-Y
-java:S1128	"<Remove this unused import 'javax.servlet.RequestDispatcher'.(ÀˆÚº8õÚãﬂÃ.
+O
+java:S1128"2Remove this unused import 'java.util.Enumeration'.(ªÓ‹Æ8ÆûŸÃÃ.
+J
+java:S1128"(Remove this unused import 'entity.Role'.(Ï∑Ωï˙ˇˇˇˇ8…ù•–Ã.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(’Î±ƒ¯ˇˇˇˇ8…ù•–Ã.
 n
 java:S1192"LDefine a constant instead of duplicating this literal "login-error" 3 times.(øùπ°˙ˇˇˇˇ8ÆûŸÃÃ.
 c
 java:S1192"FDefine a constant instead of duplicating this literal "login" 4 times.(Í£Æ–8ÍöƒÕÃ.
+Y
+java:S1128	"<Remove this unused import 'javax.servlet.RequestDispatcher'.(ÀˆÚº8õÚãﬂÃ.
 X
 java:S1128";Remove this unused import 'javax.servlet.http.HttpSession'.(Ì®ÙÅ8…ù•–Ã.
-U	java:S106!"9Replace this use of System.out or System.err by a logger.(ﬂü≤Æ8ìñ®ﬂÃ.
-Z	java:S106""9Replace this use of System.out or System.err by a logger.(°„¸ª˚ˇˇˇˇ8≈Ê¿ﬂÃ.
-M
-java:S1128"+Remove this unused import 'java.util.List'.(’Î±ƒ¯ˇˇˇˇ8…ù•–Ã.
-O
-java:S1128"2Remove this unused import 'java.util.Enumeration'.(ªÓ‹Æ8ÆûŸÃÃ.
+X	java:S125$"<This block of commented-out lines of code should be removed.(˚ã´˜8»‚’äÕ.
 H
 java:S1128"+Remove this unused import 'entity.Product'.(¿Ïé˝8…ù•–Ã.
-J
-java:S1128"(Remove this unused import 'entity.Role'.(Ï∑Ωï˙ˇˇˇˇ8…ù•–Ã.
-X	java:S125'"<This block of commented-out lines of code should be removed.(˚ã´˜8ˆ«¯ﬁÃ.
+H
+java:S1128"+Remove this unused import 'entity.Receipt'.(¨—÷ú8…ù•–Ã.

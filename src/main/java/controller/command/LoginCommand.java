@@ -26,10 +26,10 @@ public class LoginCommand extends FrontCommand{
             forward("login-error");
             return;
         }
-        String commandName = roleName.substring(0, 1).toUpperCase() + roleName.substring(1);
+
         HttpUtils.setRoleToSession(request, roleName);
         HttpUtils.storeRoleInCookie(response, roleName);
-        request.getSession().setAttribute("command", commandName + "Welcome");
+        request.getSession().setAttribute("command", roleName + ".Welcome");
         response.sendRedirect(roleName + "/welcome-page");
 
 

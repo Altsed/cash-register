@@ -1,16 +1,15 @@
 
-
-java:S11864"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦–ö×8ìûŒöÌ.
+K
+java:S1481Ğ"-Remove this unused "receipts" local variable.(üÊòó8Ñ­’‹Í.
 m
-java:S2095¦"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8å¦ëõÌ.
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8å¦ëõÌ.
+java:S2095´"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8¡£ùÌ.
 Z
-java:S2589®"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8å¦ëõÌ.
+java:S2589¡"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8¡£ùÌ.
 Z
-java:S2589“"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8å¦ëõÌ.
+java:S2589¼"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8¡£ùÌ.
 >
-java:S2129¡" Remove this "String" constructor(Ü¯Œş8å¦ëõÌ.
+java:S2129¯" Remove this "String" constructor(Ü¯Œş8¡£ùÌ.
 q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ü–Œ©ıÿÿÿÿ8õØâøÌ.
-J	java:S108")Either remove or fill this block of code.(ÈÍš©şÿÿÿÿ8¾åöøÌ.
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Û‚Œúÿÿÿÿ8 öšûÌ.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8å¦ëõÌ.
