@@ -1,0 +1,16 @@
+
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÄŒÙ²Í.
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‘¢öÅ8¸İÙÉÍ.
+J
+java:S1128"(Remove this unused import 'entity.User'.(Ï£Šûıÿÿÿÿ8›Ãà­Í.
+N
+java:S1128"1Remove this unused import 'java.util.Comparator'.(î¹ó¹8ÄŒÙ²Í.
+M
+java:S1068"+Remove this unused "message" private field.(ù„è¿ûÿÿÿÿ8‰ÆóÉÍ.
+_
+java:S1128"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8Ëö¤³Í.
+m
+java:S1192 "KDefine a constant instead of duplicating this literal "receipt_id" 3 times.(Ãåéáÿÿÿÿÿ8”°ÍÍ.
+]
+java:S1128";Remove this unused import 'javax.servlet.http.HttpServlet'.(û÷Å›ÿÿÿÿÿ8ÊŠŞ­Í.

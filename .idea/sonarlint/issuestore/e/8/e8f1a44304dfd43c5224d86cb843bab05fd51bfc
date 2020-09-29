@@ -1,20 +1,20 @@
 
-n
-java:S1192"LDefine a constant instead of duplicating this literal "login-error" 3 times.(¿¹¡úÿÿÿÿ8®ÙÌÌ.
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8É¥ĞÌ.
-Y
-java:S1128	"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼8›ò‹ßÌ.
+c
+java:S1192"FDefine a constant instead of duplicating this literal "login" 3 times.(ê£®Ğ8€èø¨Í.
+X
+java:S1128";Remove this unused import 'javax.servlet.http.HttpSession'.(í¨ô8É¥ĞÌ.
+X	java:S125"<This block of commented-out lines of code should be removed.(Ìù‹ö8÷ÚÕÍ.
 H
 java:S1128"+Remove this unused import 'entity.Product'.(Àìı8É¥ĞÌ.
 H
 java:S1128"+Remove this unused import 'entity.Receipt'.(¬ÑÖœ8É¥ĞÌ.
-X	java:S125$"<This block of commented-out lines of code should be removed.(û‹«÷8ÈâÕŠÍ.
-X
-java:S1128";Remove this unused import 'javax.servlet.http.HttpSession'.(í¨ô8É¥ĞÌ.
-c
-java:S1192"FDefine a constant instead of duplicating this literal "login" 4 times.(ê£®Ğ8êšÄÍÌ.
+n
+java:S1192"LDefine a constant instead of duplicating this literal "login-error" 3 times.(¿¹¡úÿÿÿÿ8®ÙÌÌ.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8É¥ĞÌ.
 O
 java:S1128"2Remove this unused import 'java.util.Enumeration'.(»îÜ®8®ÙÌÌ.
+Y
+java:S1128	"<Remove this unused import 'javax.servlet.RequestDispatcher'.(Ëöò¼8›ò‹ßÌ.
 J
 java:S1128"(Remove this unused import 'entity.Role'.(ì·½•úÿÿÿÿ8É¥ĞÌ.

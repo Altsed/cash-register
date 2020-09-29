@@ -13,8 +13,6 @@ N
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 C
 web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05
-G
-web/WEB-INF/context.xml,e\0\e0237236e173bcbf2629da64d082b25a2ca79117
 i
 9src/main/java/dao/PoolConnectionBuilderPostresqlImpl.java,d\9\d9b060d113efa6f3e8bfe72527cd227680ac72fd
 \
@@ -75,3 +73,5 @@ m
 =src/main/java/controller/command/stockman/WelcomeCommand.java,3\7\37d3c415918b2c836280b24d084327c3ae591166
 m
 =src/main/java/controller/command/operator/WelcomeCommand.java,9\1\910062c3be8c4e856f1741922157141c3b4093bd
+y
+Isrc/main/java/controller/command/operator/AddProductToReceiptCommand.java,2\e\2ea92479b5802ce4e5dbec04f994fe5eedb58ea3

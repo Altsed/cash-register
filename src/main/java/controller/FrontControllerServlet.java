@@ -20,7 +20,7 @@ public class FrontControllerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("utf8");
         FrontCommand command = getCommand(request);
         command.init(getServletContext(), request, response);
         command.process(cashRegisterService);
@@ -28,13 +28,15 @@ public class FrontControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("utf8");
         FrontCommand command = getCommand(request);
         command.init(getServletContext(), request, response);
         command.process(cashRegisterService);
     }
 
     private FrontCommand getCommand(HttpServletRequest request) {
+
+
         System.out.println(request.getRequestURL());
 
         try {

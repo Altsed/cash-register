@@ -1,18 +1,18 @@
 
-Z	java:S106&"9Replace this use of System.out or System.err by a logger.(¶çÎüÿÿÿÿ8ê®İ‰Í.
-ƒ
-java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8ê®İ‰Í.
-r
-java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çØß8ê®İ‰Í.
-b
-java:S2259"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥ş8ê®İ‰Í.
+Z	java:S106("9Replace this use of System.out or System.err by a logger.(¶çÎüÿÿÿÿ8ê®İ‰Í.
 ƒ
 java:S1989"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8ê®İ‰Í.
 u
 java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(İ¤®ò8ê®İ‰Í.
-e
-java:S1192*"HDefine a constant instead of duplicating this literal "command" 4 times.(Â‚Ê¬8¦³šÍ.
-U	java:S1062"9Replace this use of System.out or System.err by a logger.(‘©¢“8É¥´šÍ.
-Z	java:S1061"9Replace this use of System.out or System.err by a logger.(ÿÕöşúÿÿÿÿ8É¥´šÍ.
 b
 java:S2259!"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥ş8ê®İ‰Í.
+e
+java:S1192,"HDefine a constant instead of duplicating this literal "command" 4 times.(Â‚Ê¬8¦³šÍ.
+r
+java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çØß8ê®İ‰Í.
+b
+java:S2259"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥ş8ê®İ‰Í.
+U	java:S1064"9Replace this use of System.out or System.err by a logger.(‘©¢“8É¥´šÍ.
+Z	java:S1063"9Replace this use of System.out or System.err by a logger.(ÿÕöşúÿÿÿÿ8É¥´šÍ.
+ƒ
+java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8ê®İ‰Í.

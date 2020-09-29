@@ -1,7 +1,3 @@
 
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8Òá‰¡Ì.
-b
-java:S1854'"@Remove this useless assignment to local variable "hashPassword".(æÆÛÁùÿÿÿÿ8›®ĞÌ.
-S
-java:S1481'"1Remove this unused "hashPassword" local variable.(æÆÛÁùÿÿÿÿ8›®ĞÌ.
+m	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úœ—8Öƒâ¨Í.
+r	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ŠÙÏıÿÿÿÿ8€ğ¬Í.

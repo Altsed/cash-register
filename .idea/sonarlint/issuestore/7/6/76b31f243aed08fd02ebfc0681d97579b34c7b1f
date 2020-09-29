@@ -1,16 +1,22 @@
 
-m
-java:S2095´"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8¡£ùÌ.
->
-java:S2129¯" Remove this "String" constructor(Ü¯Œş8¡£ùÌ.
-Z
-java:S2589¡"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8¡£ùÌ.
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¸·Óûÿÿÿÿ8å¦ëõÌ.
-q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Û‚Œúÿÿÿÿ8 öšûÌ.
 I
-java:S1168â"+Return an empty collection instead of null.(¥¹ï8îé‘šÍ.
+java:S1168×"+Return an empty collection instead of null.(¥¹ï8ÂÖô¬Í.
 Z
-java:S2589¼"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8¡£ùÌ.
-^	java:S125Ğ"<This block of commented-out lines of code should be removed.( ñ¢–şÿÿÿÿ8’šÍ.
+java:S2589–"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8ÂÖô¬Í.
+^	java:S125Å"<This block of commented-out lines of code should be removed.( ñ¢–şÿÿÿÿ8ÂÖô¬Í.
+l
+java:S1192 "JDefine a constant instead of duplicating this literal "reference" 4 times.(ÚÅÎ™üÿÿÿÿ8øªí°Í.
+>
+java:S2129¤" Remove this "String" constructor(Ü¯Œş8ÂÖô¬Í.
+Z
+java:S2589±"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8ÂÖô¬Í.
+m
+java:S2095©"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8ÂÖô¬Í.
+q
+java:S2095f"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Û‚Œúÿÿÿÿ8 öšûÌ.
+s	java:S117Á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕƒŒæÿÿÿÿÿ8íïò¬Í.
+r
+java:S2095Š"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ŒïÏæÿÿÿÿÿ8Õ«ë®Í.
+n	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úœ—8ÂÖô¬Í.
+g
+java:S1192""JDefine a constant instead of duplicating this literal "is_weight" 3 times.(ºÊ¢ğ8¢æ­¶Í.

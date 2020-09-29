@@ -91,7 +91,7 @@
                             <td>
 
                                     <form name="updateQuantityForm" method="POST" action="update-quantity">
-                                        <input type="number" step="0.01" min="0" name="stock"/>
+                                        <input type="number" step="0.01" min="0" name="stock" required/>
                                         <input hidden type="text" name="nameOfProduct" value="${products.name}"/>
                                         <input hidden type="text" name="isWeight" value="${products.isWeight}"/>
                                         <input hidden name="productId" value="${products.id}">

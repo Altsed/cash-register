@@ -13,7 +13,8 @@ import java.util.List;
 public class UpdateStockCommand extends FrontCommand {
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
-
+        List<Product> products = cashRegisterService.getProducts();
+        products.sort(Comparator.comparing(Product::getName));
 
         int productId = Integer.parseInt(request.getParameter("productId"));
         double stock = Double.parseDouble(request.getParameter("stock"));
@@ -21,9 +22,10 @@ public class UpdateStockCommand extends FrontCommand {
         boolean isWeight = Boolean.getBoolean(request.getParameter("isWeight"));
 
         if (!isWeight && stock % 1 != 0) {
-            request.setAttribute("products", cashRegisterService.getProducts());
+            request.setAttribute("products", products);
             request.setAttribute("message", "It not weight product, quantity must be whole number");
             request.setAttribute("command", "StockmanWelcome");
+
             forward( "stockman/welcome-page");
             return;
         }
