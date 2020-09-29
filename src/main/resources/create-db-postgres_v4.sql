@@ -98,3 +98,30 @@ INSERT INTO receipt (user_id) VALUES
 (1);
 INSERT INTO receipt_has_product (receipt_id, product_id, quantity) VALUES
 (1, 1, 5.2), (1, 2, 5);
+
+CREATE OR REPLACE FUNCTION subtract_quantity_from_stock() RETURNS TRIGGER AS $$
+DECLARE
+    actual_quantity real;
+    new_quantity real;
+BEGIN
+    SELECT available_quantity FROM warehouse WHERE warehouse.product_id = NEW.product_id INTO actual_quantity;
+
+    IF  TG_OP = 'INSERT' THEN
+       new_quantity = actual_quantity - NEW.quantity;
+        UPDATE warehouse SET available_quantity=new_quantity WHERE product_id=NEW.product_id;
+        RETURN NEW;
+    ELSIF TG_OP = 'UPDATE' THEN
+        new_quantity = actual_quantity - (NEW.quantity - OLD.quantity);
+        UPDATE warehouse SET available_quantity=new_quantity WHERE product_id=NEW.product_id;
+        RETURN NEW;
+    ELSIF TG_OP = 'DELETE' THEN
+        new_quantity = actual_quantity + OLD.quantity ;
+        UPDATE warehouse SET available_quantity=new_quantity WHERE product_id=NEW.product_id;
+        RETURN OLD;
+    END IF;
+END
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS t_quantity ON receipt_has_product;
+CREATE TRIGGER t_quantity
+    AFTER INSERT OR UPDATE OR DELETE ON receipt_has_product FOR EACH ROW EXECUTE PROCEDURE subtract_quantity_from_stock();

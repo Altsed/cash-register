@@ -143,6 +143,38 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
     }
 
     @Override
+    public void updateQuantity(int receipt_id, int product_id, double quantity) {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try (Connection connection = connectionBuilder.getConnection()) {
+            preparedStatement = connection.prepareStatement(UPDATE_QUANTITY_IN_RECEIPT_FOR_THE_PRODUCT);
+            preparedStatement.setDouble(1, quantity);
+            preparedStatement.setInt(2, product_id);
+            preparedStatement.setInt(3, receipt_id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+    }
+
+    @Override
+    public void closeReceipt(int receipt_id) {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try (Connection connection = connectionBuilder.getConnection()) {
+            preparedStatement = connection.prepareStatement(CLOSE_RECEIPT);
+            preparedStatement.setInt(1, receipt_id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+    }
+
+    @Override
     public List<Product> getProducts() {
         List<Product> products = new ArrayList<>();
         Statement statement = null;

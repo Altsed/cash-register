@@ -37,4 +37,8 @@ public interface CustomerDAO {
     Receipt getReceipt(int receiptId);
 
     double getStockForProduct(Product product);
+
+    void updateQuantity(int receipt_id, int product_id, double quantity);
+
+    void closeReceipt(int receipt_id);
 }

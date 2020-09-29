@@ -17,11 +17,6 @@ public class AddProductToReceiptCommand extends FrontCommand {
 
     private static final  String forwardPage = "operator/welcome-page";
     private Map<String, String> parameters;
-//    private String reference;
-//    private String name;
-//    private String quantity;
-//    private String message;
-//    private int receiptId ;
 
     public AddProductToReceiptCommand(){
         parameters = new HashMap<>();
@@ -75,9 +70,6 @@ public class AddProductToReceiptCommand extends FrontCommand {
     @Override
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
         initializeParameters();
-        for (Map.Entry<String, String> entry : parameters.entrySet()){
-            System.out.println("key: " + entry.getKey() + " | " + entry.getValue() );
-        }
         int receipt_id = Integer.parseInt(parameters.get("receipt_id"));
 
         if (isEnterFormEmpty()) {

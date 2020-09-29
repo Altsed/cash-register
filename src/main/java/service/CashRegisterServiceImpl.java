@@ -28,6 +28,16 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     }
 
     @Override
+    public void updateQuantity(int receipt_id, int product_id, double quantity) {
+        customerDAO.updateQuantity(receipt_id, product_id, quantity);
+    }
+
+    @Override
+    public void closeReceipt(int receipt_id) {
+        customerDAO.closeReceipt(receipt_id);
+    }
+
+    @Override
     public String validateUser(String login, String password) {
         User user = customerDAO.validateUser(login);
          if (user == null || user.getLogin() == null || !BCryptPassword.checkPass(password, user.getPassword())) {
