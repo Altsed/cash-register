@@ -37,4 +37,8 @@ public interface CashRegisterService {
     void updateQuantity(int receipt_id, int product_id, double quantity);
 
     void closeReceipt(int receipt_id);
+
+    void deleteProductFromReceipt(int product_id, int receipt_id);
+
+    void deleteReceipt(int receipt_id);
 }

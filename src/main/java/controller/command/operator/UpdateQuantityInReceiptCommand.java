@@ -63,4 +63,7 @@ public class UpdateQuantityInReceiptCommand extends FrontCommand {
         request.setAttribute("message", parameters.get("message"));
 
     }
+
+
+
 }

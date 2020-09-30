@@ -75,3 +75,7 @@ m
 =src/main/java/controller/command/operator/WelcomeCommand.java,9\1\910062c3be8c4e856f1741922157141c3b4093bd
 y
 Isrc/main/java/controller/command/operator/AddProductToReceiptCommand.java,2\e\2ea92479b5802ce4e5dbec04f994fe5eedb58ea3
+}
+Msrc/main/java/controller/command/operator/UpdateQuantityInReceiptCommand.java,8\d\8d1b1b66373626f49ad4edad6214668cebcbddda
+r
+Bsrc/main/java/controller/command/operator/CloseReceiptCommand.java,3\8\3814f1bee93c3479b098d6e6cd37184a5901a9b9

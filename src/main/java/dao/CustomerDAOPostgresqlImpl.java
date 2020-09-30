@@ -44,6 +44,47 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
     }
 
     @Override
+    public void deleteProductFromReceipt(int product_id, int receipt_id) {
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+
+        try(Connection connection = connectionBuilder.getConnection()){
+            preparedStatement = connection.prepareStatement(DELETE_PRODUCT_FROM_RECEIPT);
+            preparedStatement.setInt(1, product_id);
+            preparedStatement.setInt(2, receipt_id);
+            preparedStatement.executeUpdate();
+
+            if (getReceipt(receipt_id).getProductList().size() == 0) {
+                deleteReceipt(receipt_id);
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+
+        }finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+    }
+
+    @Override
+    public void deleteReceipt(int receipt_id) {
+        ResultSet resultSet = null;
+        PreparedStatement preparedStatement = null;
+
+        try(Connection connection = connectionBuilder.getConnection()){
+            preparedStatement = connection.prepareStatement(DELETE_RECEIPT);
+            preparedStatement.setInt(1, receipt_id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+
+        }finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+    }
+
+    @Override
     public double getStockForProduct(Product product) {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
@@ -354,25 +395,25 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
     @Override
     public List<Receipt> getReceipts() {
-//        List<Product> receipts = new ArrayList<>();
-//        Statement statement = null;
-//        ResultSet resultSet = null;
-//        try(Connection connection = connectionBuilder.getConnection()){
-//            statement = connection.createStatement();
-//            resultSet = statement.executeQuery(GET_PRODUCTS);
-//            while (resultSet.next()){
-//                int id = resultSet.getInt("id");
-//                String nameOfProduct = resultSet.getString("name");
-//                boolean isWeight = resultSet.getBoolean("is_weight");
-//                double stock = resultSet.getDouble("available_quantity");
-//                products.add( new Product (id, nameOfProduct, isWeight, stock));
-//            }
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        } finally {
-//            closeStatmentAndResultSet(statement, resultSet);
-//        }
-        return null;
+        List<Receipt> receipts = new ArrayList<>();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try(Connection connection = connectionBuilder.getConnection()){
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(GET_RECEIPTS);
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String login = resultSet.getString("login");
+                boolean status = Boolean.getBoolean(resultSet.getString("status"));
+                User user = new User(login);
+                receipts.add(new Receipt(id, user, status));
+             }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            closeStatmentAndResultSet(statement, resultSet);
+        }
+        return receipts;
     }
 
     @Override
@@ -474,6 +515,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
                }
                 return receipt;
             }
+            return null;
         }
         catch (SQLException throwables) {
             throwables.printStackTrace();

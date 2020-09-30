@@ -34,7 +34,6 @@ To change this template use File | Settings | File Templates.
                 <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> English</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown09">
@@ -42,6 +41,13 @@ To change this template use File | Settings | File Templates.
                             <span class="flag-icon flag-icon-ua"></span></a>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <form name="logout" action="logout" method="POST">
+                        <button class="btn btn-link" type="submit" name="command" value="Logout" method="POST" action="cancel-receipt" onsubmit="${sessionStorage.clear()}">
+                            Logout</button>
+                    </form>
+                </li>
+
             </ul>
         </div>
     </div>

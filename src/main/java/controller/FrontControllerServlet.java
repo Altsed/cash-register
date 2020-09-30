@@ -36,9 +36,6 @@ public class FrontControllerServlet extends HttpServlet {
 
     private FrontCommand getCommand(HttpServletRequest request) {
 
-
-        System.out.println(request.getRequestURL());
-
         try {
             String parameter;
             if (request.getSession().getAttribute("command") != null) {

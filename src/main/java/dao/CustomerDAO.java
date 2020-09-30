@@ -31,6 +31,7 @@ public interface CustomerDAO {
 
     User getUserById(int user_id);
 
+    void deleteProductFromReceipt(int product_id, int receipt_id);
 
     int addProductToReceipt(int receiptId, Product product, int user_id, double quantity);
 
@@ -41,4 +42,6 @@ public interface CustomerDAO {
     void updateQuantity(int receipt_id, int product_id, double quantity);
 
     void closeReceipt(int receipt_id);
+
+    void deleteReceipt(int receipt_id);
 }

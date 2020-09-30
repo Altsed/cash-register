@@ -68,8 +68,18 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     }
 
     @Override
+    public void deleteReceipt(int receipt_id) {
+        customerDAO.deleteReceipt(receipt_id);
+    }
+
+    @Override
     public List<Receipt> getReceipts() {
         return customerDAO.getReceipts();
+    }
+
+    @Override
+    public void deleteProductFromReceipt(int product_id, int receipt_id) {
+        customerDAO.deleteProductFromReceipt(product_id, receipt_id);
     }
 
     @Override

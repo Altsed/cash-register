@@ -26,7 +26,11 @@ public class SqlQuery {
     public static final String CHECK_PRODUCT_IF_EXISTS = "SELECT * FROM product WHERE reference=? OR name=?";
 
     public static final String CREATE_RECEIPT = "INSERT INTO receipt (user_id) VALUES (?);";
+    public static final String GET_RECEIPTS = "SELECT receipt.id, login, status FROM receipt JOIN user_account ua on receipt.user_id = ua.id";
+    public static final String DELETE_RECEIPT = "DELETE FROM receipt WHERE receipt.id=?";
+
     public static final String CLOSE_RECEIPT = "UPDATE receipt SET status='closed' WHERE receipt.id=?";
+    public static final String DELETE_PRODUCT_FROM_RECEIPT = "DELETE FROM receipt_has_product WHERE product_id=? and receipt_id=?";
     public static final String GET_RECEIPT_BY_ID ="SELECT product_id, reference, name, quantity, is_weight FROM receipt_has_product\n" +
             "    INNER JOIN receipt ON receipt_id=receipt.id\n" +
             "    INNER JOIN product ON receipt_has_product.product_id = product.id\n" +

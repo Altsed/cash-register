@@ -9,6 +9,19 @@ public class Receipt implements Datable{
     User user;
     boolean isClosed;
 
+    public Receipt(int id, User user, boolean isClosed) {
+        this.id = id;
+        this.user = user;
+        this.isClosed = isClosed;
+    }
+
+    public Receipt() {
+    }
+
+    public boolean getIsClosed() {
+        return isClosed;
+    }
+
     public int getId() {
         return id;
     }
@@ -36,9 +49,14 @@ public class Receipt implements Datable{
       return result;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Receipt{" +
+                "id=" + id +
+                ", user=" + user.getLogin() +
+                ", isClosed=" + isClosed +
+                '}';
+    }
 
     public static void main(String[] args) {
         Receipt receipt = new Receipt();

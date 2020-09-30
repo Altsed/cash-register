@@ -88,7 +88,7 @@ INSERT INTO product (name, is_weight, reference) VALUES
 INSERT INTO warehouse (product_id, available_quantity) VALUES
 (1, 10.5), (2, 100);
 INSERT INTO user_role (name) VALUES
-('stockman'), ('operator'), ('chief_operator');
+('stockman'), ('operator'), ('chief');
 INSERT INTO user_account (login, password, role_id) VALUES
 ('1', '$2a$10$sZw/WJ3EXaqBpQGCNh7EZ.PPGTWcpElVzLMAo.MUvwjmZd8YyIMF6', 1),
 ('2', '$2a$10$N7405JapTpACBBmNbDxkA.A58MLrOR8jXJxEpOGSlwxRPPc2E9A2u', 2),
@@ -116,7 +116,7 @@ BEGIN
         RETURN NEW;
     ELSIF TG_OP = 'DELETE' THEN
         new_quantity = actual_quantity + OLD.quantity ;
-        UPDATE warehouse SET available_quantity=new_quantity WHERE product_id=NEW.product_id;
+        UPDATE warehouse SET available_quantity=new_quantity WHERE product_id=OLD.product_id;
         RETURN OLD;
     END IF;
 END

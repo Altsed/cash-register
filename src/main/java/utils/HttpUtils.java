@@ -11,8 +11,7 @@ public class HttpUtils {
 
     public static void setRoleToSession(HttpServletRequest request, String roleName){
         request.getSession().setAttribute(roleAttribute, roleName);
-
-    }
+   }
     public static void storeRoleInCookie(HttpServletResponse response, String roleName){
         Cookie cookie = new Cookie("role", roleName);
         cookie.setMaxAge(10*60);
@@ -23,6 +22,16 @@ public class HttpUtils {
         return (String) request.getSession().getAttribute(roleAttribute);
 
     }
+
+    public static void deleteCookie(HttpServletResponse response, String parameter){
+        Cookie cookieUserName = new Cookie(parameter, null);
+        cookieUserName.setMaxAge(0);
+        response.addCookie(cookieUserName);
+    }
+    public static void deleteSession(){
+
+    }
+
 
 
     public static void storeLoginIdCookie(HttpServletResponse response, int loginId) {
