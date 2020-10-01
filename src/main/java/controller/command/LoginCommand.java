@@ -28,7 +28,7 @@ public class LoginCommand extends FrontCommand{
         }
         int loginId = cashRegisterService.getLoginId(request.getParameter("login"));
 
-        HttpUtils.setRoleToSession(request, roleName);
+//        HttpUtils.setRoleToSession(request, roleName);
         HttpUtils.storeRoleInCookie(response, roleName);
         HttpUtils.storeLoginIdCookie(response, loginId);
         request.getSession().setAttribute("command", roleName + ".Welcome");

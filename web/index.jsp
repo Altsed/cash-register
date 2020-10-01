@@ -22,6 +22,7 @@
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
+         <h4 style="color: yellow" class="page-header">${requestScope.message}</h4>
          <h2 class="page-header">Please login or register</h2>
 
          <form name="loginForm" method="POST" action="welcome-page">

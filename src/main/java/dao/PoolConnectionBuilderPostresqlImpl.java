@@ -16,7 +16,7 @@ public class PoolConnectionBuilderPostresqlImpl implements PoolConnectionBuilder
             Context envContext = (Context) initContext.lookup("java:comp/env");
             DataSource ds = (DataSource) envContext.lookup("jdbc/desk_db");
             con = ds.getConnection();
-            System.out.print("Connection established!");
+
         } catch (NamingException e) {
             e.printStackTrace();
         } catch (SQLException e) {

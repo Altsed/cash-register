@@ -45,9 +45,6 @@ public class FrontControllerServlet extends HttpServlet {
             else {
                 parameter = request.getParameter("command");
             }
-            System.out.println("Parameter in FRONT: " + parameter);
-            System.out.println("Requested URL " + request.getRequestURI());
-
             String commandNameClass = String.format(
                     "controller.command.%sCommand",
                     parameter);

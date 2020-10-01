@@ -1,11 +1,11 @@
 
 k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã¸ªûÿÿÿÿ
+H
+java:S1128"+Remove this unused import 'entity.Product'.(Àìı8ÆÇÜÍ.
 P
 java:S1128
 ".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ8ÆÇÜÍ.
 L
 java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ8ÆÇÜÍ.
-H
-java:S1128"+Remove this unused import 'entity.Product'.(Àìı8ÆÇÜÍ.
 m
 java:S1192"KDefine a constant instead of duplicating this literal "receipt_id" 3 times.(‰›Äôøÿÿÿÿ8òİÂÜÍ.

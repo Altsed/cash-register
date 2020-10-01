@@ -338,6 +338,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
     }
 
+
     @Override
     public String getRoleForUser(User user) {
         String roleName = "";

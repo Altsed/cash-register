@@ -47,8 +47,6 @@ e
 web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
 P
  web/WEB-INF/view/login-error.jsp,1\a\1a5e4732d5ada90672532944f6a7d814a13e0b70
-`
-0web/WEB-INF/view/chief-operator/welcome-page.jsp,4\9\492b91346156af1c211b41b95e905d84d25f0a49
 W
 'src/main/java/utils/BCryptPassword.java,7\0\707b4bbd72726c79c56e1678c5acf48e4e1aadb0
 M
@@ -79,3 +77,19 @@ Isrc/main/java/controller/command/operator/AddProductToReceiptCommand.java,2\e\
 Msrc/main/java/controller/command/operator/UpdateQuantityInReceiptCommand.java,8\d\8d1b1b66373626f49ad4edad6214668cebcbddda
 r
 Bsrc/main/java/controller/command/operator/CloseReceiptCommand.java,3\8\3814f1bee93c3479b098d6e6cd37184a5901a9b9
+W
+'web/WEB-INF/view/chief/welcome-page.jsp,4\5\457f364e11db6b9cc3320e4eae6d441857afe950
+p
+@src/main/java/controller/command/chief/CancelReceiptCommand.java,2\c\2c0046a8d07a1ee9f6b5d2290545a0aebe1e8c2c
+z
+Jsrc/main/java/controller/command/chief/UpdateQuantityInReceiptCommand.java,4\4\448257c38034b176413a978116d2e88451447985
+t
+Dsrc/main/java/controller/command/chief/DeleteFromReceiptCommand.java,b\1\b1f9675f203c39b273bf5a0adc698a5d7070ba3d
+Y
+)web/WEB-INF/view/chief/update-receipt.jsp,7\3\737499eb8de757c01fe29a6eeeb59a2d146dd622
+p
+@src/main/java/controller/command/chief/UpdateReceiptCommand.java,f\e\fec4e4b9d537ed45cddd70acf28160fd7406afc5
+j
+:src/main/java/controller/command/chief/WelcomeCommand.java,6\3\6381d958662a9d5c05c0d7821bf047ef0249f515
+c
+3src/main/java/controller/command/LogoutCommand.java,4\e\4e483f104561be64a8e807ab57f55ce19b0d8556
