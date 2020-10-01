@@ -30,27 +30,30 @@ public class RoleFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        String roleInSession = HttpUtils.getRoleFromCookie(request);
-        String roleFromRequest = getRoleFromRequest(request);
-        System.out.println(checkParametersFromRequest(request));
+        try {
+            String roleInSession = HttpUtils.getRoleFromCookie(request);
+            String roleFromRequest = getRoleFromRequest(request);
+            System.out.println(checkParametersFromRequest(request));
+            System.out.println(response.getStatus());
+            System.out.println("role in cookie: " + roleInSession + " role in request: " + roleFromRequest);
+            checkParametersFromRequest(request);
+            if (roleFromRequest != "null" && roleInSession == "null") {
+                response.sendRedirect("/");
+                return;
+            }
 
-        System.out.println("role in cookie: " + roleInSession + " role in request: " + roleFromRequest);
-        checkParametersFromRequest(request);
-        if (roleFromRequest !="null" && roleInSession == "null") {
+            if (roleFromRequest != "null" && !roleInSession.equals(roleFromRequest)) {
+                response.sendRedirect("/");
+                return;
+            }
+            filterChain.doFilter(request, response);
+        }catch (Throwable ex){
             response.sendRedirect("/");
-            return;
         }
-
-        if (roleFromRequest !="null" && !roleInSession.equals(roleFromRequest)) {
-            request.setAttribute("message", "You not from that role !");
-            response.sendRedirect("/");
-            return;
-        }
-      filterChain.doFilter(request, response);
     }
+
 
 
     @Override
