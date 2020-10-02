@@ -34,8 +34,6 @@
             return false;
         }
      }
-
-
 </script>
 
 <div class="container h-100">

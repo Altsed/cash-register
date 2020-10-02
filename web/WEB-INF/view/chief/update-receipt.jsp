@@ -59,14 +59,14 @@
                             <td>${receipt.value}</td>
                             <td>
 
-                                <form name="updateQuantityForm" method="POST" action="update-quantity" onsubmit="return validateform()">
-                                    <input type="number" step="0.01" min="0" name="quantity_to_update" value="${requestScope.quantity_to_update}" required/>
+                                <form name="updateQuantityForm" method="POST" action="update-receipt" onsubmit="return validateform()">
+                                    <input type="number" step="0.01" min="0" name="quantity_to_update" required/>
                                      <input hidden type="text" name="is_weight" value="${receipt.key.isWeight}"/>
                                     <input hidden name="product_id" value="${receipt.key.id}"/>
                                     <input hidden name="reference" value="${receipt.key.reference}"/>
                                     <input hidden type="number" name="receipt_id" value="${receipt_id}"/>
                                     <button type="submit" class="btn btn-secondary btn-sm" name="command"
-                                            value="chief.UpdateQuantityInReceipt" method="POST" action="update-quantity">
+                                            value="chief.UpdateQuantityInReceipt" method="POST" action="update-receipt">
                                         Update quantity</button>
                                 </form>
                            </td>

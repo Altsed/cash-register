@@ -7,7 +7,9 @@ import entity.User;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static dao.query.SqlQuery.*;
 
@@ -339,6 +341,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
     }
 
 
+
     @Override
     public String getRoleForUser(User user) {
         String roleName = "";
@@ -526,4 +529,51 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
         return null;
     }
 
+    @Override
+    public List<Product> generateTop10Report() {
+        List<Product> products = new ArrayList<>();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try(Connection connection = connectionBuilder.getConnection()){
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(GET_TOP_TEN_PRODUCTS);
+            while (resultSet.next()){
+                products.add( new Product(resultSet.getString("reference"),
+                        resultSet.getString("name"),
+                        resultSet.getDouble("sum")));
+            }
+            return products;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            closeStatmentAndResultSet(statement, resultSet);
+        }
+        return products;
+    }
+
+    @Override
+    public Map<User, Integer> generateBestOperatorsReport() {
+        Map<User, Integer> map = new HashMap<>();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try (Connection connection = connectionBuilder.getConnection()) {
+            preparedStatement = connection.prepareStatement(GET_BEST_OPERATORS);
+            if (preparedStatement.execute()) {
+                resultSet = preparedStatement.getResultSet();
+                while (resultSet.next()) {
+                    User user = new User(resultSet.getInt("user_id"),
+                            resultSet.getString("login"));
+                    int sumOfReceipts = resultSet.getInt("sum");
+                    map.put(user, sumOfReceipts);
+                }
+            }
+            return map;
+        }
+        catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+        return map;
+     }
 }

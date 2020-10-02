@@ -8,6 +8,7 @@ import utils.HttpUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 public class CashRegisterServiceImpl implements CashRegisterService {
     CustomerDAO customerDAO = new CustomerDAOPostgresqlImpl();
@@ -108,5 +109,15 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     @Override
     public double getStockForProduct(Product product) {
         return customerDAO.getStockForProduct(product);
+    }
+
+    @Override
+    public List<Product> generateTop10Report() {
+        return customerDAO.generateTop10Report();
+    }
+
+    @Override
+    public Map<User, Integer> generateBestOperatorsReport() {
+        return customerDAO.generateBestOperatorsReport();
     }
 }

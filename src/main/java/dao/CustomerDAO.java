@@ -6,6 +6,7 @@ import entity.Role;
 import entity.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CustomerDAO {
     Product getProduct(String reference, String name);
@@ -44,4 +45,8 @@ public interface CustomerDAO {
     void closeReceipt(int receipt_id);
 
     void deleteReceipt(int receipt_id);
+
+    List<Product> generateTop10Report();
+
+    Map<User, Integer> generateBestOperatorsReport();
 }

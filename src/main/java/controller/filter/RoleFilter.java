@@ -32,6 +32,7 @@ public class RoleFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
+
         try {
             String roleInSession = HttpUtils.getRoleFromCookie(request);
             String roleFromRequest = getRoleFromRequest(request);
@@ -50,6 +51,7 @@ public class RoleFilter implements Filter {
             }
             filterChain.doFilter(request, response);
         }catch (Throwable ex){
+            ex.printStackTrace();
             response.sendRedirect("/");
         }
     }

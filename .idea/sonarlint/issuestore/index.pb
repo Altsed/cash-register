@@ -93,3 +93,13 @@ j
 :src/main/java/controller/command/chief/WelcomeCommand.java,6\3\6381d958662a9d5c05c0d7821bf047ef0249f515
 c
 3src/main/java/controller/command/LogoutCommand.java,4\e\4e483f104561be64a8e807ab57f55ce19b0d8556
+E
+web/WEB-INF/pd4tl.tld,1\2\12157fe953e2e08c08aa34e3213a8d25aaf69bb4
+Z
+*web/WEB-INF/view/chief/generate-report.jsp,7\2\72b546c78cc05285d1d28613534f846d9fc7eb4a
+[
++web/WEB-INF/view/chief/generate-report1.jsp,0\8\08f95dcc8d13552d4d063de5857be7aaa11c3bb8
+b
+2web/WEB-INF/view/chief/reports/top-10-products.jsp,5\1\5136565664cff19071ca59fa27eb4bab88768539
+q
+Asrc/main/java/controller/command/chief/GenerateReportCommand.java,0\a\0a5a354eb92aad7f8d6454f6530e937d12600562

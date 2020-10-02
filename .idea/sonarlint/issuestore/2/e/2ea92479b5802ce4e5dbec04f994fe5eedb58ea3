@@ -1,26 +1,26 @@
 
-_
-java:S1128"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8Ëö¤³Í.
-=
-java:S2129" Remove this "String" constructor(ÈÎÙ—8ôÿêÍÍ.
-=
-java:S2129" Remove this "String" constructor(À¡³­8ĞêÍÍ.
+f
+java:S1192"IDefine a constant instead of duplicating this literal "quantity" 5 times.(»Ãé¸8ã¯’ÎÍ.
 j
 java:S1192"HDefine a constant instead of duplicating this literal "message" 8 times.(äÌèğûÿÿÿÿ8ªôÎÍ.
+m	java:S117h"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó´öŒ8®ÑÍÎÍ.
+J
+java:S1128"(Remove this unused import 'entity.User'.(Ï£Šûıÿÿÿÿ8›Ãà­Í.
 r	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¬åøÿÿÿÿ8óÀÌÎÍ.
 B
 java:S2129" Remove this "String" constructor(äÌèğûÿÿÿÿ8ôÿêÍÍ.
 =
 java:S2129" Remove this "String" constructor(»Ãé¸8ôÿêÍÍ.
-v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‘¢öÅ8¸İÙÉÍ.
 h
 java:S1192"KDefine a constant instead of duplicating this literal "receipt_id" 3 times.(ˆëñİ8œªÊÎÍ.
-J
-java:S1128"(Remove this unused import 'entity.User'.(Ï£Šûıÿÿÿÿ8›Ãà­Í.
-g
-java:S1192"JDefine a constant instead of duplicating this literal "reference" 7 times.(À¡³­8‰ê‹ÎÍ.
+_
+java:S1128"BRemove this unused import 'javax.servlet.http.HttpServletRequest'.(ø©¹…8Ëö¤³Í.
 ]
 java:S1128";Remove this unused import 'javax.servlet.http.HttpServlet'.(û÷Å›ÿÿÿÿÿ8ÊŠŞ­Í.
-f
-java:S1192"IDefine a constant instead of duplicating this literal "quantity" 5 times.(»Ãé¸8ã¯’ÎÍ.
-m	java:S117h"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó´öŒ8®ÑÍÎÍ.
+g
+java:S1192"JDefine a constant instead of duplicating this literal "reference" 7 times.(À¡³­8‰ê‹ÎÍ.
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‘¢öÅ8¸İÙÉÍ.
+=
+java:S2129" Remove this "String" constructor(ÈÎÙ—8ôÿêÍÍ.
+=
+java:S2129" Remove this "String" constructor(À¡³­8ĞêÍÍ.

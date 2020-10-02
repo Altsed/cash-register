@@ -19,6 +19,15 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository> <!-- move the section to settings.xml, if desired -->
+            <id>pd4ml</id>
+            <url>https://pd4ml.tech/maven2/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.mindrot/jbcrypt -->
         <dependency>
@@ -43,6 +52,15 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.zefer/pd4ml -->
+        <dependency>
+            <groupId>com.pd4ml</groupId>
+            <artifactId>pd4ml</artifactId>
+            <version>[1.0.0,)</version>
+        </dependency>
+
+
+
 
 
 

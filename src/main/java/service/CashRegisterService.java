@@ -4,6 +4,7 @@ import entity.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 public interface CashRegisterService {
     Product getProduct(String reference, String name);
@@ -41,4 +42,8 @@ public interface CashRegisterService {
     void deleteProductFromReceipt(int product_id, int receipt_id);
 
     void deleteReceipt(int receipt_id);
+
+    List<Product> generateTop10Report();
+
+    Map<User, Integer> generateBestOperatorsReport();
 }

@@ -31,6 +31,14 @@
             <hr>
             <h4 style="color: yellow" class="page-header">${requestScope.message}</h4>
             <hr>
+
+            <form name="generateReport" method="POST" action="generate-report">
+                <button type="submit" class="btn btn-info btn-sm" name="command"
+                        value="chief.GenerateReport" method="POST" action="generate-report">
+                    Generate report</button>
+            </form>
+
+            <hr>
             <div class="container-fluid">
                 <table class="table table-bordered table-hover" id="table">
                     <tr>

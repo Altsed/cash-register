@@ -38,4 +38,15 @@ public class SqlQuery {
 
     public static final String INSERT_PRODUCTS_TO_RECEIPT = "INSERT INTO receipt_has_product " +
             "(receipt_id, product_id, quantity) VALUES (?, ?, ?);";
+    public static final String GET_TOP_TEN_PRODUCTS = "SELECT product_id, reference, name, " +
+            "SUM(quantity) as sum FROM receipt_has_product\n" +
+            "    JOIN product on receipt_has_product.product_id = product.id " +
+            "GROUP BY product_id, name, reference ORDER BY sum DESC LIMIT 10;";
+
+    public static final String GET_BEST_OPERATORS = "SELECT user_id, login, COUNT(user_id) as sum " +
+            "FROM receipt JOIN user_account ON user_id=user_account.id\n" +
+            "GROUP BY user_id, login";
+
+
+
 }
