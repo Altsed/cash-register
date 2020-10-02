@@ -1,12 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: SEVEN-WORK
-  Date: 24.09.2020
-  Time: 20:36
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
 <html>
 <head>
     <!-- Required meta tags -->
@@ -40,23 +38,25 @@
     <div class="d-flex h-100">
         <div class="align-self-start mr-auto">
             <hr>
+            <h4 style="color: yellow" class="page-header"><fmt:message key="warehousewelcome"/></h4>
             <h4 style="color: yellow" class="page-header">${requestScope.message}</h4>
+            <h4 style="color: yellow" class="page-header"></h4>
             <hr>
             <form name="addProductForm" method="POST" action="add-product" onsubmit="return validateform()">
                 <div class="container-fluid">
                     <table class="table table-bordered table-hover">
                         <tr>
-                            <th scope="col">Reference</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Is weight</th>
-                            <th scope="col">On stock</th>
+                            <th scope="col"><fmt:message key="reference"/></th>
+                            <th scope="col"><fmt:message key="name"/></th>
+                            <th scope="col"><fmt:message key="weight"/></th>
+                            <th scope="col"><fmt:message key="stock"/></th>
                         </tr>
                         <tr>
                             <td><input name="reference" value="${requestScope.referenceOfProduct}" required></input></td>
                             <td><input name="name" value="${requestScope.nameOfProduct}" required></input></td>
                             <td><input id="weight" class="weight_checkbox" type="checkbox" name="isWeight"></input></td>
                             <td><input type="number" step="0.01" min="0" name="stock" required></input></td>
-                            <td><button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.AddProduct">Add product</button>
+                            <td><button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.AddProduct"><fmt:message key="addproduct"/></button>
                         </tr>
                     </table>
                 </div>
@@ -64,11 +64,11 @@
             <div class="container-fluid">
                 <table class="table table-bordered table-hover" id="table">
                     <tr>
-                        <th scope="col">Reference</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Is weight</th>
-                        <th scope="col">On stock</th>
-                        <th scope="col">Action</th>
+                        <th scope="col"><fmt:message key="reference"/></th>
+                        <th scope="col"><fmt:message key="name"/></th>
+                        <th scope="col"><fmt:message key="weight"/></th>
+                        <th scope="col"><fmt:message key="stock"/></th>
+                        <th scope="col"><fmt:message key="action"/></th>
 
                     </tr>
 
@@ -87,29 +87,21 @@
                             <td>${products.isWeight}</td>
                             <td>${products.stock}</td>
                             <td>
-
                                     <form name="updateQuantityForm" method="POST" action="update-quantity">
                                         <input type="number" step="0.01" min="0" name="stock" required/>
                                         <input hidden type="text" name="nameOfProduct" value="${products.name}"/>
                                         <input hidden type="text" name="isWeight" value="${products.isWeight}"/>
                                         <input hidden name="productId" value="${products.id}">
-                                        <button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.UpdateStock" method="POST" action="update-quantity">Update quantity</button>
+                                        <button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.UpdateStock" method="POST" action="update-quantity"><fmt:message key="updatequantity"/></button>
                                     </form>
-
-
-
                              </td>
 
                         </tr>
                     </c:forEach>
                 </table>
-
             </div>
-
         </div>
     </div>
-
-
 </div>
 
 

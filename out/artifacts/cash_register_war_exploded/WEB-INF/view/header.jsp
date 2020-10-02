@@ -1,10 +1,10 @@
-<%--
-Created by IntelliJ IDEA.
-User: SEVEN-WORK
-Date: 16.09.2020
-Time: 16:43
-To change this template use File | Settings | File Templates.
---%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -31,28 +31,24 @@ To change this template use File | Settings | File Templates.
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="#" class="nav-link">Home <span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-us"> </span> English</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown09">
-                        <a class="dropdown-item" href="#ua">
-                            <span class="flag-icon flag-icon-ua"></span></a>
-                    </div>
+                <li class="nav-item">
+                <form>
+                    <select class="form-control" id="language" name="language" onchange="submit()">
+                        <option selected>${pageContext.request.locale}</option>
+                        <option value="EN" ${sessionScope.language == 'en' ? 'selected' : ''}>English</option>
+                        <option value="UA" ${sessionScope.language == 'ua' ? 'selected' : ''}>Українська</option>
+                    </select>
+                </form>
                 </li>
                 <li class="nav-item">
                     <form name="logout" action="logout" method="POST">
-                        <button class="btn btn-link" type="submit" name="command" value="Logout" method="POST" action="cancel-receipt" onsubmit="${sessionStorage.clear()}">
-                            Logout</button>
+                        <button class="btn btn-link" type="submit" name="command" value="Logout" method="POST" action="logout" onsubmit="${sessionStorage.clear()}">
+                            <fmt:message key="logout"/></button>
                     </form>
                 </li>
-
             </ul>
         </div>
     </div>
-
-
 </nav>
 
 <!-- Optional JavaScript -->

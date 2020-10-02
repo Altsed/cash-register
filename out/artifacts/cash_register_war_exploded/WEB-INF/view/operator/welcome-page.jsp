@@ -1,12 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: SEVEN-WORK
-  Date: 24.09.2020
-  Time: 20:36
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
 <html>
 <head>
     <!-- Required meta tags -->
@@ -48,16 +46,16 @@
                 <div class="container-fluid">
                     <table class="table table-bordered table-hover">
                         <tr>
-                            <th scope="col">Reference</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Quantity</th>
+                            <th scope="col"><fmt:message key="reference"/></th>
+                            <th scope="col"><fmt:message key="name"/></th>
+                            <th scope="col"><fmt:message key="quantity"/></th>
 
                         </tr>
                         <tr>
                             <td><input name="reference" value="${requestScope.reference}"></input></td>
                             <td><input name="name" value="${requestScope.name}"></input></td>
                             <td><input type="number" step="0.01" min="0" name="quantity" value="${requestScope.quantity}" required></input></td>
-                            <td><button type="submit" class="btn btn-secondary btn-sm" name="command" value="operator.AddProductToReceipt">Add product</button>
+                            <td><button type="submit" class="btn btn-secondary btn-sm" name="command" value="operator.AddProductToReceipt"><fmt:message key="addproduct"/></button>
                                 <input hidden type="number" name="receipt_id" value="${receipt_id}"/>
                                 <input hidden type="text" name="message"/>
                         </tr>
@@ -68,10 +66,10 @@
             <div class="container-fluid">
                 <table class="table table-bordered table-hover" id="table">
                     <tr>
-                        <th scope="col">Reference</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                         <th scope="col">Action</th>
+                        <th scope="col"><fmt:message key="reference"/></th>
+                        <th scope="col"><fmt:message key="name"/></th>
+                        <th scope="col"><fmt:message key="quantity"/></th>
+                         <th scope="col"><fmt:message key="action"/></th>
                     </tr>
                    <c:forEach var="receipt" items="${receipt}">
                          <tr>
@@ -87,7 +85,7 @@
                                     <input hidden type="number" name="receipt_id" value="${receipt_id}"/>
                                     <button type="submit" class="btn btn-secondary btn-sm" name="command"
                                             value="operator.UpdateQuantityInReceipt" method="POST" action="update-quantity">
-                                        Update quantity</button>
+                                        <fmt:message key="updatequantity"/></button>
                                 </form>
 
 
@@ -102,7 +100,7 @@
                         <input hidden name="receipt_id" value="${receipt_id}"/>
                         <button type="submit" class="btn btn-secondary btn-sm" name="command"
                              value="operator.CloseReceipt" method="POST" action="close-receipt">
-                            Close receipt</button>
+                            <fmt:message key="closereceipt"/></button>
                     </form>
                 </div>
 

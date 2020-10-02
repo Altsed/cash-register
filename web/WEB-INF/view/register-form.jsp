@@ -1,12 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: SEVEN-WORK
-  Date: 16.09.2020
-  Time: 16:43
-  To change this template use File | Settings | File Templates.
---%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
 
 
 <html>
@@ -26,35 +24,35 @@
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
-         <h2 class="page-header">Registration form</h2>
+         <h2 class="page-header"><fmt:message key="registrationform"/></h2>
          <h4 style="color:yellow;"class="page-header">${requestScope.message}</h4>
          <form name="registration-form" method="POST" >
            <input hidden name="registration"/>
            <div class="form-group">
-             <label for="login">Login</label>
+             <label for="login"><fmt:message key="login"/></label>
              <input type="login"
                     name="login"
                     class="form-control"
                     id="login"
-                    placeholder="Login"
+                    placeholder=<fmt:message key="login"/>
                     required
              >
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword">Password</label>
+             <label for="exampleInputPassword"><fmt:message key="password"/></label>
              <input type="password"
                     name="password"
                     class="form-control"
                     id="exampleInputPassword"
-                    placeholder="Password"
+                    placeholder="<fmt:message key="password"/>"
                     required
              >
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword">Role</label>
+             <label for="exampleInputPassword"><fmt:message key="role"/></label>
              <jsp:useBean id="roles" scope="session" type="java.util.List"/>
              <select class="form-control" name="role" required>
-               <option value="" selected disabled hidden>Choose role</option>
+               <option value="" selected disabled hidden><fmt:message key="chooserole"/></option>
                <c:forEach items="${roles}"  var="role">
                  <option value="${role.id}">${role.name}
                  </option>
@@ -62,18 +60,14 @@
              </select>
             </div>
            <hr>
-              <button onclick="location.href='index.jsp'" class="btn btn-secondary mr-2" ></i>Back</button>
-              <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register" >Register</button>
+              <button onclick="location.href='index.jsp'" class="btn btn-secondary mr-2" ></i><fmt:message key="back"/></button>
+              <button type="submit" class="btn btn-secondary mr-2" name="command" value="Register" ><fmt:message key="register"/></button>
 
          </form>
 
        </div>
      </div>
    </div>
-   <p>
-     <a href="${pageContext.request.contextPath}/index.jsp">Back to main</a>
-   </p>
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

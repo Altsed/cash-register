@@ -1,11 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: SEVEN-WORK
-  Date: 16.09.2020
-  Time: 16:43
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
 <html>
   <head>
     <!-- Required meta tags -->
@@ -22,29 +21,29 @@
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">
          <hr>
-         <h2 class="page-header">Please check login/password</h2>
+         <h2 class="page-header"><fmt:message key="checklogin"/></h2>
          <form name="loginForm" method="POST" action="welcome-page" >
            <div class="form-group">
-             <label for="login">Login</label>
+             <label for="login"><fmt:message key="login"/></label>
              <input type="login"
                     name="login"
                     class="form-control"
                     id="login"
-                    placeholder="Login"
+                    placeholder=<fmt:message key="login"/>
                     value=${requestScope.login}
              >
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword">Password</label>
+             <label for="exampleInputPassword"><fmt:message key="password"/></label>
              <input type="password"
                     name="password"
                     class="form-control"
                     id="exampleInputPassword"
-                    placeholder="Password"
+                    placeholder=<fmt:message key="password"/>
              >
            </div>
-             <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login">Login</button>
-           <button type="submit" class="btn btn-secondary" name="command" value="Register">Register</button>
+             <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login"><fmt:message key="login"/></button>
+           <button type="submit" class="btn btn-secondary" name="command" value="Register"><fmt:message key="register"/></button>
          </form>
 
 

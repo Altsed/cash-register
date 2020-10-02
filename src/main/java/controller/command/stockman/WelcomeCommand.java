@@ -15,7 +15,6 @@ public class WelcomeCommand extends FrontCommand {
     public void process(CashRegisterService cashRegisterService) throws ServletException, IOException {
         List<Product> products = cashRegisterService.getProducts();
         products.sort(Comparator.comparing(Product::getName));
-        request.setAttribute("message", "You enter to warehouse management system, please add or update product");
         request.setAttribute("products", products);
         request.setAttribute("products", products);
         request.setAttribute("role", "stockman");

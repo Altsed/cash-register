@@ -3,7 +3,7 @@ package entity;
 import java.lang.reflect.Field;
 import java.util.*;
 
-public class Receipt implements Datable{
+public class Receipt {
     int id;
     Map<Product, Double> productList = new HashMap<>();
     User user;
@@ -18,10 +18,6 @@ public class Receipt implements Datable{
     public Receipt() {
     }
 
-    public boolean getIsClosed() {
-        return isClosed;
-    }
-
     public int getId() {
         return id;
     }
@@ -32,10 +28,6 @@ public class Receipt implements Datable{
 
     public User getUser() {
         return user;
-    }
-
-    public void setProductList(Map<Product, Double> productList) {
-        this.productList = productList;
     }
 
     public void setUser(User user) {

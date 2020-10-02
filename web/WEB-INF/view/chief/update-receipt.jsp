@@ -1,12 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: SEVEN-WORK
-  Date: 24.09.2020
-  Time: 20:36
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
 <html>
 <head>
     <!-- Required meta tags -->
@@ -87,7 +85,7 @@
                         <input hidden type="number" name="receipt_id" value="${requestScope.receipt_id}"/>
                         <button type="submit" class="btn btn-secondary btn-sm" name="command"
                                 value="chief.Welcome" method="POST" action="cancel-receipt">
-                            Back</button>
+                            <fmt:message key="back"/></button>
                     </form>
                 </div>
                 <div class="text-left">
@@ -95,7 +93,7 @@
                         <input hidden name="receipt_id" value="${receipt_id}"/>
                         <button type="submit" class="btn btn-secondary btn-sm" name="command"
                                 value="chief.CancelReceipt" method="POST" action="cancel-receipt">
-                            Cancel receipt</button>
+                            <fmt:message key="cancelreceipt"/></button>
                     </form>
                 </div>
 

@@ -1,12 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: SEVEN-WORK
-  Date: 24.09.2020
-  Time: 20:36
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
 <html>
 <head>
     <!-- Required meta tags -->
@@ -42,10 +40,10 @@
             <div class="container-fluid">
                 <table class="table table-bordered table-hover" id="table">
                     <tr>
-                        <th scope="col">Receipt Nr.</th>
-                        <th scope="col">Operator</th>
-                        <th scope="col">Status</th>
-                         <th scope="col">Action</th>
+                        <th scope="col"><fmt:message key="receipt"/></th>
+                        <th scope="col"><fmt:message key="operator"/></th>
+                        <th scope="col"><fmt:message key="status"/></th>
+                         <th scope="col"><fmt:message key="action"/></th>
                     </tr>
                    <c:forEach var="receipt" items="${receipts}">
                          <tr>
@@ -57,14 +55,14 @@
                                      <input hidden type=number name="receipt_id" value="${receipt.id}"/>
                                      <button type="submit" class="btn btn-secondary btn-sm" name="command"
                                             value="chief.UpdateReceipt" method="POST" action="update-quantity">
-                                        Update receipt</button>
+                                         <fmt:message key="updatereceipt"/></button>
                                 </form>
                              <td>
                                  <form name="cancelReceipt" method="POST" action="cancel-receipt">
                                      <input hidden type=number name="receipt_id" value="${receipt.id}"/>
                                      <button type="submit" class="btn btn-secondary btn-sm" name="command"
                                              value="chief.CancelReceipt" method="POST" action="cancel-receipt">
-                                         Cancel receipt</button>
+                                         <fmt:message key="cancelreceipt"/></button>
                                  </form>
                         </td>
 

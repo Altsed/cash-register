@@ -1,4 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session" />
+<fmt:setLocale value="${sessionScope.language}"/>
+<fmt:setBundle basename="language" />
+<html lang="${language}">
+
 <%--
   Created by IntelliJ IDEA.
   User: SEVEN-WORK
@@ -6,7 +13,7 @@
   Time: 16:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
   <head>
     <!-- Required meta tags -->
@@ -23,45 +30,44 @@
        <div class="col-md-6 col-md-offset-2">
          <hr>
          <h4 style="color: yellow" class="page-header">${requestScope.message}</h4>
-         <h2 class="page-header">Please login or register</h2>
+
+         <h2 class="page-header"><fmt:message key="login/register"/></h2>
 
          <form name="loginForm" method="POST" action="welcome-page">
            <div class="form-group">
-             <label for="login">Login</label>
+             <label for="login"><fmt:message key="login"/></label>
              <input type="login"
                     name="login"
                     class="form-control"
                     id="login"
-                   placeholder="Login"
+                   placeholder=<fmt:message key="login"/>
                     value=${requestScope.login}
 
              >
            </div>
            <div class="form-group">
-             <label for="exampleInputPassword">Password</label>
+             <label for="exampleInputPassword"><fmt:message key="password"/></label>
              <input type="password"
                     name="password"
                     class="form-control"
                     id="exampleInputPassword"
-                    placeholder="Password"
+                    placeholder=<fmt:message key="password"/>
              >
            </div>
 
-            <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login">Login</button>
-           <button formaction="register" type="submit" class="btn btn-secondary" name="command" value="Register">Register</button>
+            <button type="submit" class="btn btn-secondary mr-2" name="command" value="Login"><fmt:message key="login"/></button>
+           <button formaction="register" type="submit" class="btn btn-secondary" name="command" value="Register"><fmt:message key="register"/></button>
          </form>
+         <fmt:message key="description"/>
        </div>
      </div>
    </div>
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
 
   </body>
 </html>
