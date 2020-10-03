@@ -1,19 +1,19 @@
 
-‰
-java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8½¼‰ÏÍ.
-b
-java:S2259!"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥þ8ê®Ý‰Í.
-b
-java:S2259"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥þ8ê®Ý‰Í.
-ƒ
-java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—þÿÿÿÿ8ê®Ý‰Í.
-‰
-java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8›Ï‹ÏÍ.
-r
-java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çŽØß8›Ï‹ÏÍ.
-u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ý¤®ò8ê®Ý‰Í.
 e
 java:S1192)"HDefine a constant instead of duplicating this literal "command" 4 times.(Â‚Ê¬8¦Ž³šÍ.
+‰
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8›Ï‹ÏÍ.
+‰
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8½¼‰ÏÍ.
+ƒ
+java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—þÿÿÿÿ8ê®Ý‰Í.
+b
+java:S2259!"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥þ8ê®Ý‰Í.
+r
+java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çŽØß8›Ï‹ÏÍ.
 ƒ
 java:S1989"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—þÿÿÿÿ8ê®Ý‰Í.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(Ý¤®ò8ê®Ý‰Í.
+b
+java:S2259"EA "NullPointerException" could be thrown; "command" is nullable here.(äÁ¥þ8ê®Ý‰Í.

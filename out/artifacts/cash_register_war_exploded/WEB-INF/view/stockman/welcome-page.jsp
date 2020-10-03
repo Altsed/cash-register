@@ -100,6 +100,68 @@
                     </c:forEach>
                 </table>
             </div>
+
+            <form action="ReadProducts">
+                <input type="hidden" name="currentPage" value="1">
+                <div class="form-group col-md-4">
+                    <label for="records">Select records per page:</label>
+                    <select class="form-control" id="records" name="recordsPerPage">
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                    </select>
+                    <button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.Welcome">Submit</button>
+                </div>
+
+            </form>
+            <nav aria-label="Navigation for countries">
+                <ul class="pagination pagination-sm">
+                    <c:if test="${currentPage != 1}">
+                        <li class="page-item">
+                            <form method="post" action="page-${currentPage-1}" class="inline">
+                                <input type="hidden" name="recordsPerPage" value=${recordsPerPage}>
+                                <input type="hidden" name="currentPage" value=${currentPage-1}>
+                                <button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.Welcome" class="link-button">
+                                    Previous
+                                </button>
+                            </form>
+                        </li>
+                    </c:if>
+                    <c:forEach begin="1" end="${noOfPages}" var="i">
+                        <c:choose>
+                            <c:when test="${currentPage eq i}">
+                                <li class="page-item active"><a class="page-link">
+                                        ${i} <span class="sr-only">(current)</span></a>
+                                </li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="page-item">
+                                    <form method="post" action="page-${i}" class="inline">
+                                        <input type="hidden" name="recordsPerPage" value=${recordsPerPage}>
+                                        <input type="hidden" name="currentPage" value=${i}>
+                                        <button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.Welcome"
+                                                class="link-button">
+                                                ${i}
+                                        </button>
+                                    </form>
+                               </li>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                    <c:if test="${currentPage lt noOfPages}">
+                        <li class="page-item">
+                            <form method="post" action="page-${currentPage+1}" class="inline">
+                                <input type="hidden" name="recordsPerPage" value=${recordsPerPage}>
+                                <input type="hidden" name="currentPage" value=${currentPage+1}>
+                                <button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.Welcome"
+                                        class="link-button">
+                                    Next
+                                </button>
+                            </form>
+                        </li>
+                   </c:if>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>

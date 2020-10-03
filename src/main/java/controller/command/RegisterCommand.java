@@ -38,7 +38,6 @@ public class RegisterCommand extends FrontCommand {
             request.setAttribute("message", "User was successfully registered");
             forward("register-form");
         }
-
     }
 
     private void removeAndSetAttributes(User user){

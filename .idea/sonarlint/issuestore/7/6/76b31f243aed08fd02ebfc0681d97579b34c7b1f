@@ -1,27 +1,31 @@
 
-d
-java:S1192—"FDefine a constant instead of duplicating this literal "login" 3 times.(ª¾†Ì8Ü‚×¯Î.
-n	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8±û¶÷Í.
-Z
-java:S2589ş"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8±û¶÷Í.
-s	java:S117Î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸å˜Ûüÿÿÿÿ8±û¶÷Í.
+n	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8±û¶÷Í.
 r
-java:S2095×"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ŒïÏæÿÿÿÿÿ8±û¶÷Í.
-Z
-java:S2589ã"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8±û¶÷Í.
-l
-java:S1192""JDefine a constant instead of duplicating this literal "reference" 5 times.(ÚÅÎ™üÿÿÿÿ8øªí°Í.
-n	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8±û¶÷Í.
+java:S2095©"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Û‚Œúÿÿÿÿ8±û¶÷Í.
+r	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶²éÓùÿÿÿÿ8óÇµ÷Í.
+s	java:S117æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸å˜Ûüÿÿÿÿ8±û¶÷Í.
+J
+java:S1481×",Remove this unused "product" local variable.(Ñ¹À8Ó–»êÎ.
+r
+java:S2095Ø"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ŒïÏæÿÿÿÿÿ8±û¶÷Í.
+u
+java:S1192<"SDefine a constant instead of duplicating this literal "available_quantity" 3 times.(öÆºåÿÿÿÿÿ8œÃ÷éÎ.
+n	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8±û¶÷Í.
 m
-java:S2095ö"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8±û¶÷Í.
-r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8“Î¢óÍ.
+java:S2095÷"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8±û¶÷Í.
+Z
+java:S2589ÿ"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8±û¶÷Í.
+Z
+java:S2589ä"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8±û¶÷Í.
+n	java:S117Ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úœ—8±û¶÷Í.
+r	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8ƒ÷ŸóÍ.
+r	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8“Î¢óÍ.
 g
-java:S1192$"JDefine a constant instead of duplicating this literal "is_weight" 3 times.(ºÊ¢ğ8¢æ­¶Í.
-r	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶²éÓùÿÿÿÿ8óÇµ÷Í.
-r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8ƒ÷ŸóÍ.
+java:S1192$"JDefine a constant instead of duplicating this literal "is_weight" 4 times.(ºÊ¢ğ8ˆÚûèÎ.
+d
+java:S1192˜"FDefine a constant instead of duplicating this literal "login" 3 times.(ª¾†Ì8Ü‚×¯Î.
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕƒŒæÿÿÿÿÿ8±û¶÷Í.
+l
+java:S1192""JDefine a constant instead of duplicating this literal "reference" 6 times.(ÚÅÎ™üÿÿÿÿ8øªí°Í.
 >
-java:S2129ñ" Remove this "String" constructor(Ü¯Œş8±û¶÷Í.
-r
-java:S2095‘"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Û‚Œúÿÿÿÿ8±û¶÷Í.
-s	java:S117Œ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕƒŒæÿÿÿÿÿ8±û¶÷Í.
-n	java:S117Ò"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úœ—8±û¶÷Í.
+java:S2129ò" Remove this "String" constructor(Ü¯Œş8±û¶÷Í.

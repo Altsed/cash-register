@@ -25,6 +25,7 @@ public class GenerateReportCommand extends FrontCommand {
                 request.setAttribute("report", "report");
                 request.setAttribute("top10", top10Products);
                 forward("chief/reports/top-10-products");
+                return;
             }
          }
         if (typeOfReport.equals("best-operators")) {
@@ -32,8 +33,9 @@ public class GenerateReportCommand extends FrontCommand {
             if (bestOperators != null) {
                 request.setAttribute("message", "Best operators");
                 request.setAttribute("report", "report");
-                request.setAttribute("best-operators", bestOperators);
+                request.setAttribute("bestoperators", bestOperators);
                 forward("chief/reports/best-operators");
+                return;
             }
           }
 

@@ -20,7 +20,7 @@ public class LoginCommand extends FrontCommand{
             forward("login-error");
             return;
         }
-        //request.setAttribute("login", request.getParameter("login"));
+
         String roleName = cashRegisterService.validateUser(request.getParameter("login") , request.getParameter("password"));
         if ("login-error".equals(roleName)) {
             forward("login-error");
@@ -28,7 +28,7 @@ public class LoginCommand extends FrontCommand{
         }
         int loginId = cashRegisterService.getLoginId(request.getParameter("login"));
 
-//        HttpUtils.setRoleToSession(request, roleName);
+        HttpUtils.storeLanguageInCookie(response, request.getParameter("language"));
         HttpUtils.storeRoleInCookie(response, roleName);
         HttpUtils.storeLoginIdCookie(response, loginId);
         request.getSession().setAttribute("command", roleName + ".Welcome");

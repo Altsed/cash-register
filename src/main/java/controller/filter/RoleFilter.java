@@ -36,9 +36,6 @@ public class RoleFilter implements Filter {
         try {
             String roleInSession = HttpUtils.getRoleFromCookie(request);
             String roleFromRequest = getRoleFromRequest(request);
-            System.out.println(checkParametersFromRequest(request));
-            System.out.println(response.getStatus());
-            System.out.println("role in cookie: " + roleInSession + " role in request: " + roleFromRequest);
             checkParametersFromRequest(request);
             if (roleFromRequest != "null" && roleInSession == "null") {
                 response.sendRedirect("/");

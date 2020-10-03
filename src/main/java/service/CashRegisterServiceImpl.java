@@ -121,4 +121,14 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     public Map<User, Integer> generateBestOperatorsReport() {
         return customerDAO.generateBestOperatorsReport();
     }
+
+    @Override
+    public List<Product> getProducts(int currentPage, int recordsPerPage) {
+        return customerDAO.getProducts(currentPage, recordsPerPage);
+    }
+
+    @Override
+    public int getNumberOfRows() {
+        return customerDAO.getNumberOfRows();
+    }
 }

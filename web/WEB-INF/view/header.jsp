@@ -5,7 +5,7 @@
 <fmt:setLocale value="${sessionScope.language}"/>
 <fmt:setBundle basename="language" />
 <html lang="${language}">
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <!-- Required meta tags -->
@@ -31,15 +31,6 @@
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                <form>
-                    <select class="form-control" id="language" name="language" onchange="submit()">
-                        <option selected>${pageContext.request.locale}</option>
-                        <option value="EN" ${sessionScope.language == 'en' ? 'selected' : ''}>English</option>
-                        <option value="UA" ${sessionScope.language == 'ua' ? 'selected' : ''}>Українська</option>
-                    </select>
-                </form>
-                </li>
                 <li class="nav-item">
                     <form name="logout" action="logout" method="POST">
                         <button class="btn btn-link" type="submit" name="command" value="Logout" method="POST" action="logout" onsubmit="${sessionStorage.clear()}">

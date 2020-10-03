@@ -75,4 +75,8 @@ public class User {
     public void setPassword(String hashPassword) {
         password = hashPassword;
     }
+
+    public int getId() {
+        return id;
+    }
 }

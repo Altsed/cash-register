@@ -46,4 +46,8 @@ public interface CashRegisterService {
     List<Product> generateTop10Report();
 
     Map<User, Integer> generateBestOperatorsReport();
+
+    List<Product> getProducts(int currentPage, int recordsPerPage);
+
+    int getNumberOfRows();
 }

@@ -6,14 +6,6 @@
 <fmt:setBundle basename="language" />
 <html lang="${language}">
 
-<%--
-  Created by IntelliJ IDEA.
-  User: SEVEN-WORK
-  Date: 16.09.2020
-  Time: 16:43
-  To change this template use File | Settings | File Templates.
---%>
-
 <html>
   <head>
     <!-- Required meta tags -->
@@ -22,9 +14,41 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/superhero/bootstrap.min.css" integrity="sha384-HnTY+mLT0stQlOwD3wcAzSVAZbrBp141qwfR4WfTqVQKSgmcgzk+oP0ieIyrxiFO" crossorigin="anonymous">
     <title>Cash register</title>
-    <jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>
+<%--    <jsp:include page="/WEB-INF/view/header.jsp"></jsp:include>--%>
   </head>
   <body>
+  <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <!-- Logo Image -->
+        <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+        <!-- Logo Text -->
+        <span class="text-uppercase font-weight-bold">Company</span>
+      </a>
+
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <form>
+              <select class="form-control" id="language" name="language" onchange="submit()">
+                <option selected value="Language">${sessionScope.language}</option>
+                <option value="EN" ${sessionScope.language == 'en' ? 'selected' : ''}>English</option>
+                <option value="UA" ${sessionScope.language == 'ua' ? 'selected' : ''}>Українська</option>
+              </select>
+            </form>
+
+          </li>
+          <li class="nav-item">
+            <form name="logout" action="logout" method="POST">
+              <button class="btn btn-link" type="submit" name="command" value="Logout" method="POST" action="logout" onsubmit="${sessionStorage.clear()}">
+                <fmt:message key="logout"/></button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
    <div class="container h-100">
      <div class="d-flex h-100">
        <div class="col-md-6 col-md-offset-2">

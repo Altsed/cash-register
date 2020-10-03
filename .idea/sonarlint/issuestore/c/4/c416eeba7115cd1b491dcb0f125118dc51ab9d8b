@@ -1,16 +1,16 @@
 
 p
-java:S11922"SUse already-defined constant 'userAttribute' instead of duplicating its value here.(è³´”8ÕÈ¢ƒÎ.
+java:S11926"SUse already-defined constant 'userAttribute' instead of duplicating its value here.(è³´”8ÕÈ¢ƒÎ.
 O
 java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8Å‰‘Î.
 V
 java:S1128"9Remove this unused import 'javax.servlet.ServletRequest'.(ë´áÙ8ø™ÊÚÌ.
 X
 java:S1128";Remove this unused import 'javax.servlet.http.HttpSession'.(í¨ô8‰Š™ƒÎ.
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(©çæúÿÿÿÿ8ø™ÊÚÌ.
 W
 java:S1118
 ":Add a private constructor to hide the implicit public one.(„–Û8ø™ÊÚÌ.
-{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(©çæúÿÿÿÿ8ø™ÊÚÌ.
 v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(”û£Ş8êõ¡ƒÎ.
 
 java:S1186+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ºúóµ8ÜñùÍ.

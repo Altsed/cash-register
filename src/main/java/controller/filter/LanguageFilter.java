@@ -17,16 +17,16 @@ import java.util.List;
 @WebFilter(filterName = "languageFilter", urlPatterns = { "/*" })
 public class LanguageFilter implements Filter {
 
-   @Override
+    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         if (request.getParameter("language") != null) {
-           request.getSession().setAttribute("language", "ua");
-       }
-       System.out.println("locale set to " + request.getParameter("language"));
-       filterChain.doFilter(request, response);
+            request.getSession().setAttribute("language", "ua");
+        }
+        System.out.println("locale set to " + request.getParameter("language"));
+        filterChain.doFilter(request, response);
 
 
     }

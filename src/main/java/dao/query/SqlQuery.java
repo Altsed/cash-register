@@ -47,6 +47,9 @@ public class SqlQuery {
             "FROM receipt JOIN user_account ON user_id=user_account.id\n" +
             "GROUP BY user_id, login";
 
+    public static final String GET_PRODUCTS_FOR_PAGE = "SELECT * FROM product JOIN  warehouse w on product.id = w.product_id ORDER BY name OFFSET ? LIMIT ?";
+    public static final String GET_PRODUCTS_COUNT = "SELECT COUNT(product.id) FROM product";
+
 
 
 }

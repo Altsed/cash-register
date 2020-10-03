@@ -18,6 +18,10 @@ public class Receipt {
     public Receipt() {
     }
 
+    public boolean getIsClosed() {
+        return isClosed;
+    }
+
     public int getId() {
         return id;
     }
@@ -28,6 +32,10 @@ public class Receipt {
 
     public User getUser() {
         return user;
+    }
+
+    public void setProductList(Map<Product, Double> productList) {
+        this.productList = productList;
     }
 
     public void setUser(User user) {

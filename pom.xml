@@ -52,12 +52,7 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.zefer/pd4ml -->
-        <dependency>
-            <groupId>com.pd4ml</groupId>
-            <artifactId>pd4ml</artifactId>
-            <version>[1.0.0,)</version>
-        </dependency>
+
 
 
 

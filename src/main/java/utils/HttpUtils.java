@@ -43,7 +43,11 @@ public class HttpUtils {
     public static void deleteSession(){
 
     }
-
+    public static void storeLanguageInCookie(HttpServletResponse response, String language) {
+        Cookie cookie = new Cookie("language", language);
+        cookie.setMaxAge(10*60);
+        response.addCookie(cookie);
+    }
 
 
     public static void storeLoginIdCookie(HttpServletResponse response, int loginId) {

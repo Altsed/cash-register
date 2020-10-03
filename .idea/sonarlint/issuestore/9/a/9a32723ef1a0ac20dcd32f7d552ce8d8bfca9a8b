@@ -1,0 +1,16 @@
+
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8‚ÚïÎ.
+Z
+java:S1128"8Remove this unused import 'service.CashRegisterService'.(–å­èúÿÿÿÿ8‚ÚïÎ.
+O
+java:S1128"2Remove this unused import 'java.util.Enumeration'.(»îÜ®8‚ÚïÎ.
+^
+java:S1128"<Remove this unused import 'service.CashRegisterServiceImpl'.(Éæ²üÿÿÿÿ8‚ÚïÎ.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8‚ÚïÎ.
+k
+java:S1192"IDefine a constant instead of duplicating this literal "language" 3 times.(³¦íèûÿÿÿÿ8Ù³ŸïÎ.
+I
+java:S1128",Remove this unused import 'utils.HttpUtils'.(ä“óá8Ù³ŸïÎ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Äèµõüÿÿÿÿ8Ù³ŸïÎ.

@@ -44,6 +44,30 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
         return null;
 
     }
+    @Override
+    public List<Product> getProducts() {
+        List<Product> products = new ArrayList<>();
+        Statement statement = null;
+        ResultSet resultSet = null;
+        try(Connection connection = connectionBuilder.getConnection()){
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(GET_PRODUCTS);
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String reference = resultSet.getString("reference");
+                String nameOfProduct = resultSet.getString("name");
+                boolean isWeight = resultSet.getBoolean("is_weight");
+                double stock = resultSet.getDouble("available_quantity");
+                products.add( new Product (id, reference, nameOfProduct, isWeight, stock));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            closeStatmentAndResultSet(statement, resultSet);
+        }
+        return products;
+    }
+
 
     @Override
     public void deleteProductFromReceipt(int product_id, int receipt_id) {
@@ -217,29 +241,6 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
         }
     }
 
-    @Override
-    public List<Product> getProducts() {
-        List<Product> products = new ArrayList<>();
-        Statement statement = null;
-        ResultSet resultSet = null;
-        try(Connection connection = connectionBuilder.getConnection()){
-            statement = connection.createStatement();
-            resultSet = statement.executeQuery(GET_PRODUCTS);
-            while (resultSet.next()){
-                int id = resultSet.getInt("id");
-                String reference = resultSet.getString("reference");
-                String nameOfProduct = resultSet.getString("name");
-                boolean isWeight = resultSet.getBoolean("is_weight");
-                double stock = resultSet.getDouble("available_quantity");
-                products.add( new Product (id, reference, nameOfProduct, isWeight, stock));
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } finally {
-            closeStatmentAndResultSet(statement, resultSet);
-        }
-        return products;
-    }
 
     @Override
     public int getLoginId(String login) {
@@ -576,4 +577,56 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
         }
         return map;
      }
+
+    @Override
+    public List<Product> getProducts(int currentPage, int recordsPerPage) {
+
+        List<Product> products = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        try(Connection connection = connectionBuilder.getConnection()){
+            preparedStatement = connection.prepareStatement(GET_PRODUCTS_FOR_PAGE);
+            preparedStatement.setInt(1, start );
+            preparedStatement.setInt(2, recordsPerPage);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String reference = resultSet.getString("reference");
+                String nameOfProduct = resultSet.getString("name");
+                boolean isWeight = resultSet.getBoolean("is_weight");
+                double stock = resultSet.getDouble("available_quantity");
+                Product product = new Product (id, reference, nameOfProduct, isWeight, stock);
+                products.add( new Product (id, reference, nameOfProduct, isWeight, stock));
+            }
+
+            return products;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+        return products;
+
+    }
+
+    @Override
+    public int getNumberOfRows() {
+        Integer numOfRows = 0;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try(Connection connection = connectionBuilder.getConnection()){
+            preparedStatement = connection.prepareStatement(GET_PRODUCTS_COUNT);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                numOfRows = resultSet.getInt(1);
+            }
+            return numOfRows;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+        return numOfRows;
+    }
 }

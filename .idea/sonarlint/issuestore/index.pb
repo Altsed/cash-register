@@ -21,10 +21,6 @@ R
 "src/main/java/dao/CustomerDAO.java,d\9\d91dd66ea1abdc393a1c1ee1e684bded32bd9b7b
 `
 0src/main/java/dao/CustomerDAOPostgresqlImpl.java,7\6\76b31f243aed08fd02ebfc0681d97579b34c7b1f
-@
-web/operator.jsp,e\d\edcee32c80dc4e05e20c9d9e0a43d72cca26d7b9
-K
-web/WEB-INF/view/result.jsp,3\a\3a9cf01cedd1e822e86ab690fb5dd16285f48a6d
 Z
 *web/WEB-INF/view/stockman/welcome-page.jsp,2\5\25536f0be761247f1506c3cc3b94342e52e4b467
 K
@@ -51,8 +47,6 @@ W
 'src/main/java/utils/BCryptPassword.java,7\0\707b4bbd72726c79c56e1678c5acf48e4e1aadb0
 M
 src/main/java/utils/main.java,6\1\61cd773a30ec2dd149b22ec88ae88015a5dfc286
-Q
-!src/main/java/entity/Datable.java,b\7\b701aa634a968dd4d4dee5fd020db3375cf932d2
 _
 /src/main/java/controller/filter/RoleFilter.java,d\9\d9f4f997ed1aabb550ba99903871164be7c94573
 R
@@ -93,13 +87,17 @@ j
 :src/main/java/controller/command/chief/WelcomeCommand.java,6\3\6381d958662a9d5c05c0d7821bf047ef0249f515
 c
 3src/main/java/controller/command/LogoutCommand.java,4\e\4e483f104561be64a8e807ab57f55ce19b0d8556
-E
-web/WEB-INF/pd4tl.tld,1\2\12157fe953e2e08c08aa34e3213a8d25aaf69bb4
 Z
 *web/WEB-INF/view/chief/generate-report.jsp,7\2\72b546c78cc05285d1d28613534f846d9fc7eb4a
-[
-+web/WEB-INF/view/chief/generate-report1.jsp,0\8\08f95dcc8d13552d4d063de5857be7aaa11c3bb8
 b
 2web/WEB-INF/view/chief/reports/top-10-products.jsp,5\1\5136565664cff19071ca59fa27eb4bab88768539
 q
 Asrc/main/java/controller/command/chief/GenerateReportCommand.java,0\a\0a5a354eb92aad7f8d6454f6530e937d12600562
+c
+3src/main/java/controller/filter/LanguageFilter.java,9\a\9a32723ef1a0ac20dcd32f7d552ce8d8bfca9a8b
+a
+1web/WEB-INF/view/chief/reports/best-operators.jsp,d\c\dca709a2f4c75de6a51b59487c5fd5d885923955
+w
+Gsrc/main/java/controller/command/stockman/WelcomeCommand_NO_PAGING.java,4\4\448fd5c515ca8141f3be9dc8824d42e5fdd40abc
+d
+4web/WEB-INF/view/stockman/welcome-page-NO-PAGING.jsp,9\8\98a0bf114cdbf912ecb3cf55be71158cb758d1b3
