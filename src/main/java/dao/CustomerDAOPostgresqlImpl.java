@@ -4,6 +4,8 @@ import entity.Product;
 import entity.Receipt;
 import entity.Role;
 import entity.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,10 +16,11 @@ import java.util.Map;
 import static dao.query.SqlQuery.*;
 
 public class CustomerDAOPostgresqlImpl implements CustomerDAO {
+    private final Logger logger = LogManager.getLogger(this.getClass().getName());
 
     PoolConnectionBuilder connectionBuilder = new PoolConnectionBuilderPostresqlImpl();
     @Override
-    public Product getProduct(String reference, String name) {
+    public Product getProduct(String reference, String name) throws SQLException {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
 
@@ -30,18 +33,20 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
             resultSet = preparedStatement.getResultSet();
             resultSet.next();
+
             return new Product(resultSet.getInt("id"),
                      resultSet.getString("reference"),
                     resultSet.getString("name"),
                     resultSet.getBoolean("is_weight"));
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
+            throw new SQLException(throwables.getCause());
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
-        return null;
+
 
     }
     @Override

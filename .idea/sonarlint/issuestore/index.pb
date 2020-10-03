@@ -97,7 +97,9 @@ c
 3src/main/java/controller/filter/LanguageFilter.java,9\a\9a32723ef1a0ac20dcd32f7d552ce8d8bfca9a8b
 a
 1web/WEB-INF/view/chief/reports/best-operators.jsp,d\c\dca709a2f4c75de6a51b59487c5fd5d885923955
-w
-Gsrc/main/java/controller/command/stockman/WelcomeCommand_NO_PAGING.java,4\4\448fd5c515ca8141f3be9dc8824d42e5fdd40abc
-d
-4web/WEB-INF/view/stockman/welcome-page-NO-PAGING.jsp,9\8\98a0bf114cdbf912ecb3cf55be71158cb758d1b3
+G
+logs/propertieslogs.log,6\1\61238b15ba74e43a5ef21834a02e7afbbba09d09
+?
+logs/mylogg.log,0\f\0f9b7e426cfe848079277fc26ab8db378982506f
+M
+src/main/java/utils/Main.java,8\3\83dde929c07c23b0437095baf9e0d5cf5c38b492
