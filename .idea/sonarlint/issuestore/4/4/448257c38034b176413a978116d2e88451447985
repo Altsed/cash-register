@@ -1,15 +1,15 @@
 
-_
-java:S1192"JDefine a constant instead of duplicating this literal "reference" 3 times.(ÁÌ“G
-f	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó´öŒ
-f
-java:S1192"KDefine a constant instead of duplicating this literal "receipt_id" 4 times.(®“Üåüÿÿÿÿ
 c
 java:S1192!"HDefine a constant instead of duplicating this literal "message" 4 times.(äËÿ–şÿÿÿÿ
-a
-java:S1192"KDefine a constant instead of duplicating this literal "product_id" 3 times.(£Øşë
-k	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¨µ£üÿÿÿÿ
+f	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó´öŒ
 n
 java:S1192"SDefine a constant instead of duplicating this literal "quantity_to_update" 7 times.(ÁŸ¶ïûÿÿÿÿ
+k	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¨µ£üÿÿÿÿ
+f
+java:S1192"KDefine a constant instead of duplicating this literal "receipt_id" 4 times.(®“Üåüÿÿÿÿ
 t	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(şÈĞ¦ùÿÿÿÿ
+a
+java:S1192"KDefine a constant instead of duplicating this literal "product_id" 3 times.(£Øşë
 k	java:S117+"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¬åøÿÿÿÿ
+_
+java:S1192"JDefine a constant instead of duplicating this literal "reference" 3 times.(ÁÌ“G

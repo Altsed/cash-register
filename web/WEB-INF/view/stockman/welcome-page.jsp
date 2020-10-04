@@ -101,18 +101,20 @@
                 </table>
             </div>
 
-            <form action="ReadProducts">
+            <form class="form-inline" action="ReadProducts">
                 <input type="hidden" name="currentPage" value="1">
-                <div class="form-group col-md-4">
+                <div class="form-group mb-2">
                     <label for="records">Select records per page:</label>
-                    <select class="form-control" id="records" name="recordsPerPage">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <select class="form-control form-control-sm" id="records" name="recordsPerPage">
                         <option value="5">5</option>
                         <option value="10" selected>10</option>
                         <option value="15">15</option>
                     </select>
-                    <button type="submit" class="btn btn-secondary btn-sm" name="command" value="stockman.Welcome">Submit</button>
-                </div>
 
+                </div>
+                <button type="submit" class="btn btn-secondary btn-sm mb-2" name="command" value="stockman.Welcome">Submit</button>
             </form>
             <nav aria-label="Navigation for countries">
                 <ul class="pagination pagination-sm">

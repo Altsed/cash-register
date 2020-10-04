@@ -1,19 +1,19 @@
 
+V
+java:S4973("9Use the "equals" method if value comparison was intended.(á¹·Ú8ÉõœïÎ.
+V
+java:S4973("9Use the "equals" method if value comparison was intended.(á¹·Ú8ÉõœïÎ.
+r	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ü¿ëúÿÿÿÿ8ÉõœïÎ.
+[
+java:S4973-"9Use the "equals" method if value comparison was intended.(Ï‡š’ÿÿÿÿÿ8ÉõœïÎ.
+T	java:S106F"9Replace this use of System.out or System.err by a logger.(¯€8ÉõœïÎ.
+Q
+java:S3740D"/Provide the parametrized type for this generic.(¡½°öùÿÿÿÿ8ÉõœïÎ.
 I
 java:S1612A",Replace this lambda with a method reference.(‘—µĞ8ÉõœïÎ.
-G
-java:S11812"%Catch Exception instead of Throwable.(À˜§üÿÿÿÿ8ÉõœïÎ.
-V
-java:S4973("9Use the "equals" method if value comparison was intended.(á¹·Ú8ÉõœïÎ.
-V
-java:S4973("9Use the "equals" method if value comparison was intended.(á¹·Ú8ÉõœïÎ.
 Q
 java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8ÉõœïÎ.
 
 java:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ÉõœïÎ.
-T	java:S106F"9Replace this use of System.out or System.err by a logger.(¯€8ÉõœïÎ.
-[
-java:S4973-"9Use the "equals" method if value comparison was intended.(Ï‡š’ÿÿÿÿÿ8ÉõœïÎ.
-Q
-java:S3740D"/Provide the parametrized type for this generic.(¡½°öùÿÿÿÿ8ÉõœïÎ.
-r	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ü¿ëúÿÿÿÿ8ÉõœïÎ.
+G
+java:S11812"%Catch Exception instead of Throwable.(À˜§üÿÿÿÿ8ÉõœïÎ.

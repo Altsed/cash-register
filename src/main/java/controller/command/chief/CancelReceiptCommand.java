@@ -19,6 +19,5 @@ public class CancelReceiptCommand extends FrontCommand {
         request.setAttribute("receipts", receipts);
         forward("chief/welcome-page");
 
-
     }
 }

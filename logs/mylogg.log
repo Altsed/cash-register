@@ -1,0 +1,12 @@
+2020-10-04 16:52:02,141 INFO u.Main [main] java.lang.Class
+2020-10-04 16:52:02,171 ERROR u.Main [main] test message
+2020-10-04 16:52:02,172 FATAL u.Main [main] test message
+2020-10-04 16:52:02,173 WARN u.Main [main] test message
+2020-10-04 16:52:02,173 INFO u.Main [main] test message
+[INFO ] 2020-10-04 17:04:58.566 [main] Main - java.lang.Class
+[ERROR] 2020-10-04 17:04:58.578 [main] Main - test message
+[FATAL] 2020-10-04 17:04:58.579 [main] Main - test message
+[WARN ] 2020-10-04 17:04:58.579 [main] Main - test message
+[INFO ] 2020-10-04 17:04:58.581 [main] Main - test message
+[ERROR] 2020-10-04 17:05:46.613 [main] Main - test message
+[FATAL] 2020-10-04 17:05:46.630 [main] Main - test message

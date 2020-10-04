@@ -4,14 +4,12 @@ import entity.Product;
 import entity.Receipt;
 import entity.Role;
 import entity.User;
-
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 public interface CustomerDAO {
-    Product getProduct(String reference, String name) throws SQLException;
-    
+    Product getProduct(String reference, String name);
+
     void createProduct(Product product);
 
     List<Product> getProducts();

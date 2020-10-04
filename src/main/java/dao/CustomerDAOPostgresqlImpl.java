@@ -8,45 +8,48 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static dao.query.SqlQuery.*;
 
 public class CustomerDAOPostgresqlImpl implements CustomerDAO {
-    private final Logger logger = LogManager.getLogger(this.getClass().getName());
+    private final Logger logger = LogManager.getLogger(CustomerDAOPostgresqlImpl.class);
 
     PoolConnectionBuilder connectionBuilder = new PoolConnectionBuilderPostresqlImpl();
+
+    public void setConnectionBuilder(PoolConnectionBuilder connectionBuilder) {
+        this.connectionBuilder = connectionBuilder;
+    }
+
     @Override
-    public Product getProduct(String reference, String name) throws SQLException {
+    public Product getProduct(String reference, String name)  {
+        Product product = new Product();
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
 
         try(Connection connection = connectionBuilder.getConnection()){
             preparedStatement = connection.prepareStatement(CHECK_PRODUCT_IF_EXISTS);
-            preparedStatement.setString(1, reference);
-            preparedStatement.setString(2, name);
+            preparedStatement.setString(1, Optional.of(reference).orElse(""));
+            preparedStatement.setString(2, Optional.of(name).orElse(""));
             if (!preparedStatement.execute()){
                 return null;
             }
             resultSet = preparedStatement.getResultSet();
             resultSet.next();
 
-            return new Product(resultSet.getInt("id"),
-                     resultSet.getString("reference"),
+            product = new Product(resultSet.getInt("id"),
+                    resultSet.getString("reference"),
                     resultSet.getString("name"),
                     resultSet.getBoolean("is_weight"));
 
         } catch (SQLException throwables) {
             logger.error(throwables.getLocalizedMessage());
-            throw new SQLException(throwables.getCause());
+
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
-
+        return product;
 
     }
     @Override
@@ -66,11 +69,43 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
                 products.add( new Product (id, reference, nameOfProduct, isWeight, stock));
             }
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(statement, resultSet);
         }
         return products;
+    }
+    @Override
+    public void createProduct(Product product) {
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        if (product == null) {
+            throw new IllegalArgumentException();
+        }
+        try (Connection connection = connectionBuilder.getConnection()) {
+            preparedStatement = connection.prepareStatement(CREATE_PRODUCT, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, product.getReference());
+            preparedStatement.setString(2, product.getName());
+            preparedStatement.setBoolean(3, product.isWeight());
+            if (preparedStatement.executeUpdate() > 0) {
+                resultSet = preparedStatement.getGeneratedKeys();
+                if (resultSet != null && resultSet.next()) {
+                    product.setId(resultSet.getInt("id"));
+                }
+            }
+            preparedStatement = connection.prepareStatement(INSERT_INIT_QUANTITY);
+            preparedStatement.setInt(1, product.getId());
+            preparedStatement.setDouble(2, product.getStock());
+            preparedStatement.executeUpdate();
+
+
+        } catch (SQLException throwables) {
+            logger.error(throwables.getLocalizedMessage());
+        }finally {
+            closeStatmentAndResultSet(preparedStatement, resultSet);
+        }
+
     }
 
 
@@ -90,7 +125,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
@@ -108,7 +143,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             preparedStatement.executeUpdate();
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
@@ -130,70 +165,12 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             return resultSet.getDouble("available_quantity");
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
         return 0;
-
-    }
-
-    public Product getProductByID(int productId) {
-        ResultSet resultSet = null;
-        PreparedStatement preparedStatement = null;
-        try(Connection connection = connectionBuilder.getConnection()){
-            preparedStatement = connection.prepareStatement(GET_PRODUCT_BY_ID);
-            preparedStatement.setInt(1, productId);
-            if (!preparedStatement.execute()){
-                return null;
-            }
-            resultSet = preparedStatement.getResultSet();
-            resultSet.next();
-            return new Product(resultSet.getInt("id"),
-                    resultSet.getString("reference"),
-                    resultSet.getString("name"),
-                    resultSet.getBoolean("isWeight"));
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-
-        }finally {
-            closeStatmentAndResultSet(preparedStatement, resultSet);
-        }
-        return null;
-
-    }
-
-    @Override
-    public void createProduct(Product product) {
-
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null;
-        try (Connection connection = connectionBuilder.getConnection()) {
-            preparedStatement = connection.prepareStatement(CREATE_PRODUCT, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setString(1, product.getReference());
-            preparedStatement.setString(2, product.getName());
-            preparedStatement.setBoolean(3, product.isWeight());
-
-            if (preparedStatement.executeUpdate() > 0) {
-                resultSet = preparedStatement.getGeneratedKeys();
-                if (resultSet != null && resultSet.next()) {
-                    product.setId(resultSet.getInt("id"));
-                }
-            }
-
-            preparedStatement = connection.prepareStatement(INSERT_INIT_QUANTITY);
-            preparedStatement.setInt(1, product.getId());
-            preparedStatement.setDouble(2, product.getStock());
-            preparedStatement.executeUpdate();
-
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
-            closeStatmentAndResultSet(preparedStatement, resultSet);
-        }
 
     }
 
@@ -207,7 +184,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             preparedStatement.setInt(2, product.getId());
             preparedStatement.executeUpdate();
        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -225,7 +202,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             preparedStatement.setInt(3, receipt_id);
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -240,7 +217,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             preparedStatement.setInt(1, receipt_id);
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -249,29 +226,31 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
     @Override
     public int getLoginId(String login) {
+        int id = 0;
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try(Connection connection = connectionBuilder.getConnection()){
             preparedStatement = connection.prepareStatement(GET_USER_ID_BY_LOGIN);
             preparedStatement.setString(1, login);
             if (!preparedStatement.execute()){
-                return 0;
+                return id;
             }
             resultSet = preparedStatement.getResultSet();
             resultSet.next();
             return resultSet.getInt("id");
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
-        return 0;
+        return id;
     }
 
     @Override
     public User getUserById(int user_id) {
+        User user = new User();
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try(Connection connection = connectionBuilder.getConnection()){
@@ -285,16 +264,17 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             return new User(resultSet.getString("login"));
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
-        return null;
+        return user;
     }
 
     @Override
     public User validateUser(String login) {
+        User user = new User();
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try(Connection connection = connectionBuilder.getConnection()){
@@ -305,7 +285,6 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
                 return null;
             }
             resultSet = preparedStatement.getResultSet();
-            User user = new User();
             while (resultSet.next()){
                 user = new User(login,
                         resultSet.getString("password"),
@@ -314,7 +293,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             return user;
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
@@ -336,7 +315,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
             return listRoles;
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(statement, resultSet);
 
@@ -363,7 +342,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -391,10 +370,9 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
 
         } catch (SQLException throwables) {
-            user.setValid(false);
-            user.setMessage("User already exists.");
-            throwables.printStackTrace();
-            return user.getMessage();
+
+            logger.error(throwables.getLocalizedMessage());
+
 
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
@@ -419,7 +397,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
                 receipts.add(new Receipt(id, user, status));
              }
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(statement, resultSet);
         }
@@ -444,7 +422,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -456,14 +434,14 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             try {
                 resultSet.close();
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                logger.error(throwables.getLocalizedMessage());
             }
         }
         if (statement != null) {
             try {
                 statement.close();
             } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                logger.error(throwables.getLocalizedMessage());
             }
         }
     }
@@ -492,7 +470,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
                 return receiptId;
             }
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -528,7 +506,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             return null;
         }
         catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -550,7 +528,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
             return products;
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(statement, resultSet);
         }
@@ -576,7 +554,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             return map;
         }
         catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         }finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -607,7 +585,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
 
             return products;
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
@@ -628,7 +606,7 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             }
             return numOfRows;
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            logger.error(throwables.getLocalizedMessage());
         } finally {
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }

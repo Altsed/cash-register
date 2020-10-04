@@ -3,8 +3,8 @@ X
 java:S1128";Remove this unused import 'javax.servlet.http.HttpSession'.(í¨ô8Ë á÷Ì.
 k
 java:S1192"ODefine a constant instead of duplicating this literal "recordsPerPage" 3 times.(ÕüŞM8‘ùÌÌÎ.
+i
+java:S1192"LDefine a constant instead of duplicating this literal "currentPage" 3 times.(êã¡§8„øÉÌÎ.
 N
 java:S1128
 "1Remove this unused import 'java.util.Comparator'.(î¹ó¹8×ŠÔêÎ.
-i
-java:S1192"LDefine a constant instead of duplicating this literal "currentPage" 3 times.(êã¡§8„øÉÌÎ.

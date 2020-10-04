@@ -12,6 +12,9 @@ public class Product {
     private boolean isWeight;
     private double stock;
 
+    public Product() {
+    }
+
     public Product(int id, String name, boolean isWeight, double stock) {
         this.id = id;
         this.name = name;

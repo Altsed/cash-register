@@ -15,6 +15,31 @@ public class CashRegisterServiceImpl implements CashRegisterService {
     CustomerDAO customerDAO = new CustomerDAOPostgresqlImpl();
 
     @Override
+    public String validateUser(String login, String password) {
+        User user = customerDAO.validateUser(login);
+        if (user == null || user.getLogin() == null || !BCryptPassword.checkPass(password, user.getPassword())) {
+            return "login-error";
+        }
+        return customerDAO.getRoleForUser(user);
+    }
+
+    @Override
+    public int getLoginId(String login) {
+        return customerDAO.getLoginId(login);
+    }
+
+    @Override
+    public void loginApproved(HttpServletRequest request, String roleName) {
+        HttpUtils.setRoleToSession(request, roleName);
+    }
+
+    @Override
+    public String registerUser(User user) {
+        user.setPassword(BCryptPassword.hashPassword(user.getPassword()));
+        return customerDAO.registerUser(user);
+    }
+
+    @Override
     public void createProduct(Product product) {
         customerDAO.createProduct(product);
     }
@@ -39,35 +64,14 @@ public class CashRegisterServiceImpl implements CashRegisterService {
         customerDAO.closeReceipt(receipt_id);
     }
 
-    @Override
-    public String validateUser(String login, String password) {
-        User user = customerDAO.validateUser(login);
-         if (user == null || user.getLogin() == null || !BCryptPassword.checkPass(password, user.getPassword())) {
-            return "login-error";
-        }
-        return customerDAO.getRoleForUser(user);
-    }
 
-    @Override
-    public int getLoginId(String login) {
-        return customerDAO.getLoginId(login);
-    }
-
-    @Override
-    public void loginApproved(HttpServletRequest request, String roleName) {
-        HttpUtils.setRoleToSession(request, roleName);
-    }
 
     @Override
     public List<Role> getRoles() {
         return customerDAO.getRoles();
     }
 
-    @Override
-    public String registerUser(User user) {
-        user.setPassword(BCryptPassword.hashPassword(user.getPassword()));
-        return customerDAO.registerUser(user);
-    }
+
 
     @Override
     public void deleteReceipt(int receipt_id) {

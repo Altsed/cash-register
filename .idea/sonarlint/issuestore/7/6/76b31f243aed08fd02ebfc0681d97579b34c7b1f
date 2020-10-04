@@ -1,31 +1,31 @@
 
-n	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8±û¶÷Í.
-l
-java:S1192""JDefine a constant instead of duplicating this literal "reference" 6 times.(ÚÅÎ™üÿÿÿÿ8øªí°Í.
-d
-java:S1192˜"FDefine a constant instead of duplicating this literal "login" 3 times.(ª¾†Ì8Ü‚×¯Î.
-r	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8ƒ÷ŸóÍ.
-r	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8“Î¢óÍ.
-m
-java:S2095÷"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8±û¶÷Í.
-g
-java:S1192$"JDefine a constant instead of duplicating this literal "is_weight" 4 times.(ºÊ¢ğ8ˆÚûèÎ.
-r	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶²éÓùÿÿÿÿ8óÇµ÷Í.
-n	java:S117Õ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8±û¶÷Í.
-s	java:S117æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸å˜Ûüÿÿÿÿ8±û¶÷Í.
-Z
-java:S2589ÿ"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8±û¶÷Í.
-u
-java:S1192<"SDefine a constant instead of duplicating this literal "available_quantity" 3 times.(öÆºåÿÿÿÿÿ8œÃ÷éÎ.
-Z
-java:S2589ä"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8±û¶÷Í.
+r	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8ƒ÷ŸóÍ.
+q
+java:S2095W"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Û‚Œúÿÿÿÿ8—…û–Ï.
 >
-java:S2129ò" Remove this "String" constructor(Ü¯Œş8±û¶÷Í.
-n	java:S117Ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úœ—8±û¶÷Í.
-s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕƒŒæÿÿÿÿÿ8±û¶÷Í.
-r
-java:S2095©"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(»Û‚Œúÿÿÿÿ8±û¶÷Í.
+java:S2129â" Remove this "String" constructor(Ü¯Œş8õó›ûÎ.
+u
+java:S1192D"SDefine a constant instead of duplicating this literal "available_quantity" 3 times.(öÆºåÿÿÿÿÿ8œÃ÷éÎ.
+m
+java:S2095ç"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¿”Ú‰8õó›ûÎ.
+g
+java:S1192+"JDefine a constant instead of duplicating this literal "is_weight" 4 times.(ºÊ¢ğ8î‚ûúÎ.
+s	java:S117Ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸å˜Ûüÿÿÿÿ8õó›ûÎ.
 J
-java:S1481×",Remove this unused "product" local variable.(Ñ¹À8Ó–»êÎ.
+java:S1481Æ",Remove this unused "product" local variable.(Ñ¹À8õó›ûÎ.
+s	java:S117ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕƒŒæÿÿÿÿÿ8õó›ûÎ.
 r
-java:S2095Ø"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ŒïÏæÿÿÿÿÿ8±û¶÷Í.
+java:S2095Ç"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ŒïÏæÿÿÿÿÿ8õó›ûÎ.
+Z
+java:S2589ï"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8õó›ûÎ.
+d
+java:S1192ˆ"FDefine a constant instead of duplicating this literal "login" 3 times.(ª¾†Ì8õó›ûÎ.
+n	java:S117Â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úœ—8õó›ûÎ.
+s	java:S117ˆ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶²éÓùÿÿÿÿ8õó›ûÎ.
+n	java:S117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8õó›ûÎ.
+n	java:S117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½›ˆÁ8õó›ûÎ.
+l
+java:S1192)"JDefine a constant instead of duplicating this literal "reference" 5 times.(ÚÅÎ™üÿÿÿÿ8î‚ûúÎ.
+Z
+java:S2589Ô"7Remove this expression which always evaluates to "true"(¸Áºúÿÿÿÿ8õó›ûÎ.
+r	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûËÅŠşÿÿÿÿ8“Î¢óÍ.
