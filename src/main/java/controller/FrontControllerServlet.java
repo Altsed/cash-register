@@ -1,6 +1,9 @@
 package controller;
 
 import controller.command.FrontCommand;
+import controller.filter.RoleFilter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import service.CashRegisterService;
 import service.CashRegisterServiceImpl;
 
@@ -16,7 +19,7 @@ import java.lang.reflect.Constructor;
 public class FrontControllerServlet extends HttpServlet {
 
     CashRegisterService cashRegisterService = new CashRegisterServiceImpl();
-
+    private final Logger logger = LogManager.getLogger(FrontControllerServlet.class);
     @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
@@ -52,6 +55,7 @@ public class FrontControllerServlet extends HttpServlet {
             Constructor<?> []cons = c.getConstructors();
             return (FrontCommand) cons[0].newInstance();
         } catch (Exception e) {
+            logger.error(e.getCause());
             return null;
         }
     }

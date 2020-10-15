@@ -77,13 +77,15 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
     }
     @Override
     public void createProduct(Product product) {
-
+        Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         if (product == null) {
             throw new IllegalArgumentException();
         }
-        try (Connection connection = connectionBuilder.getConnection()) {
+        try {
+            connection = connectionBuilder.getConnection();
+            connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(CREATE_PRODUCT, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, product.getReference());
             preparedStatement.setString(2, product.getName());
@@ -98,11 +100,22 @@ public class CustomerDAOPostgresqlImpl implements CustomerDAO {
             preparedStatement.setInt(1, product.getId());
             preparedStatement.setDouble(2, product.getStock());
             preparedStatement.executeUpdate();
-
+            connection.commit();
 
         } catch (SQLException throwables) {
-            logger.error(throwables.getLocalizedMessage());
+            try {
+                connection.rollback();
+                logger.error(throwables.getLocalizedMessage());
+            } catch (SQLException e) {
+                logger.error(throwables.getLocalizedMessage());
+            }
+
         }finally {
+            try {
+                connection.close();
+            } catch (SQLException throwables) {
+                logger.error(throwables.getLocalizedMessage());
+            }
             closeStatmentAndResultSet(preparedStatement, resultSet);
         }
 

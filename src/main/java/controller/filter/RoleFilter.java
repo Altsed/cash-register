@@ -1,5 +1,8 @@
 package controller.filter;
 
+import dao.PoolConnectionBuilderPostresqlImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import service.CashRegisterService;
 import service.CashRegisterServiceImpl;
 import utils.HttpUtils;
@@ -17,6 +20,7 @@ import java.util.Optional;
 
 @WebFilter(filterName = "roleFilter", urlPatterns = { "/*" })
 public class RoleFilter implements Filter {
+    private final Logger logger = LogManager.getLogger(RoleFilter.class);
     List<String> listOfRoles;
 
 
@@ -48,7 +52,7 @@ public class RoleFilter implements Filter {
             }
             filterChain.doFilter(request, response);
         }catch (Throwable ex){
-            ex.printStackTrace();
+            logger.error(ex.getCause());
             response.sendRedirect("/");
         }
     }
