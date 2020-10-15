@@ -87,9 +87,6 @@
                                             value="operator.UpdateQuantityInReceipt" method="POST" action="update-quantity">
                                         <fmt:message key="updatequantity"/></button>
                                 </form>
-
-
-
                             </td>
 
                         </tr>

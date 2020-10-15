@@ -8,8 +8,11 @@ import java.util.Map;
 
 public interface CashRegisterService {
     Product getProduct(String reference, String name);
+
     void createProduct(Product product);
+
     List<Product> getProducts();
+
     String validateUser(String login, String password);
 
     List<Role> getRoles();
@@ -17,7 +20,6 @@ public interface CashRegisterService {
     String registerUser(User user);
 
     void loginApproved(HttpServletRequest request, String roleName);
-
 
     void updateStock(Product product);
 

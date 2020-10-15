@@ -1,15 +1,15 @@
 
-‰
-java:S1989("lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8½¼‰ÏÍ.
-‰
-java:S1989 "lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8”‘˜Ï.
-u
-java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(İ¤®ò8ê®İ‰Í.
 e
-java:S11928"HDefine a constant instead of duplicating this literal "command" 4 times.(Â‚Ê¬8¦³šÍ.
+java:S1192)"HDefine a constant instead of duplicating this literal "command" 4 times.(Â‚Ê¬8Â¶æÏ.
 r
-java:S4144&"UUpdate this method so that its implementation is not identical to "doGet" on line 30.(çØß8²¶â˜Ï.
+java:S4144"UUpdate this method so that its implementation is not identical to "doGet" on line 21.(çØß8Â¶æÏ.
+‰
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8Â¶æÏ.
 ƒ
-java:S1989#"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8²¶â˜Ï.
+java:S1989"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8Â¶æÏ.
+‰
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(ôîÍ€8Â¶æÏ.
 ƒ
-java:S1989+"aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8²¶â˜Ï.
+java:S1989""aHandle the following exceptions that could be thrown by "process": ServletException, IOException.(´Çœ—şÿÿÿÿ8Â¶æÏ.
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(İ¤®ò8Â¶æÏ.

@@ -76,6 +76,7 @@ public class Product {
     }
 
     public boolean getIsWeight() {
+        
         return isWeight;
     }
 

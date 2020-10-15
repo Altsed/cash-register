@@ -1,5 +1,8 @@
 package dao;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -8,6 +11,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class PoolConnectionBuilderPostresqlImpl implements PoolConnectionBuilder {
+    private final Logger logger = LogManager.getLogger(PoolConnectionBuilderPostresqlImpl.class);
     @Override
     public Connection getConnection() {
         Connection con = null;
@@ -19,12 +23,13 @@ public class PoolConnectionBuilderPostresqlImpl implements PoolConnectionBuilder
             con = ds.getConnection();
 
         } catch (NamingException e) {
-            e.printStackTrace();
+            logger.error(e.getCause());
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error(e.getCause());
 
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getCause());
         }
         return con;
     }
